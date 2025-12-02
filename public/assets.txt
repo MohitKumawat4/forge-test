@@ -1,0 +1,2 @@
+BACKDROP_1=https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/3e176e0f-b606-41d5-83b8-9fbc9588a6b6_3840w.webp
+BACKDROP_2=https://cdn.prod.website-files.com/653a8b0e56e4a44a90d64931/68e291913bd0b1ca000039e9_ChatGPT%20Image%20Oct%205%2C%202025%2C%2004_28_08%20AM%201-min.jpg
