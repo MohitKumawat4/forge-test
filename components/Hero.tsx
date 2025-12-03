@@ -12,14 +12,33 @@ interface HeroProps {
 
 export function Hero({ className = "" }: HeroProps) {
     return (
-        <div className={`relative flex min-h-screen flex-col justify-start overflow-hidden pt-48 ${className}`}>
+        <div
+            className={`relative flex min-h-screen flex-col justify-start overflow-hidden pt-48 ${className}`}
+            style={{
+                background: 'radial-gradient(circle at 20% 20%, #ffffff 0%, #fdf4ff 25%, #f5f3ff 50%, #eef2ff 100%)'
+            }}
+        >
             {/* 3D Spline Background */}
             <div className="absolute inset-0 z-0">
                 <Spline
                     scene="/MASCOT.spline"
-                    className="w-full h-full"
+                    className="w-full h-full bg-transparent"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-transparent pointer-events-none" />
+            </div>
+
+            {/* Background Gradients/Blobs - Adjusted to match reference image colors */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+                {/* Top Left - Soft Purple/White Glow */}
+                <div className="absolute -top-[10%] -left-[10%] w-[60%] h-[60%] rounded-full bg-purple-100/50 blur-[100px] mix-blend-multiply" />
+
+                {/* Top Right - Cool Blue Accent */}
+                <div className="absolute top-[10%] -right-[10%] w-[50%] h-[50%] rounded-full bg-blue-200/40 blur-[100px] mix-blend-multiply" />
+
+                {/* Bottom Left - Strong Pink Glow */}
+                <div className="absolute -bottom-[10%] left-[5%] w-[50%] h-[50%] rounded-full bg-pink-300/30 blur-[100px] mix-blend-multiply" />
+
+                {/* Bottom Right - Soft Indigo/Lavender */}
+                <div className="absolute -bottom-[10%] -right-[10%] w-[50%] h-[50%] rounded-full bg-indigo-200/30 blur-[100px] mix-blend-multiply" />
             </div>
 
             {/* Content */}
@@ -35,10 +54,10 @@ export function Hero({ className = "" }: HeroProps) {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
-                            className="max-w-4xl text-3xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl mb-6"
+                            className="max-w-4xl text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl mb-6"
                         >
                             Transform Your <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
                                 Business Logic
                             </span>
                         </motion.h1>
@@ -47,7 +66,7 @@ export function Hero({ className = "" }: HeroProps) {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-                            className="mt-4 max-w-1/2 text-lg leading-8 text-zinc-100 font-light"
+                            className="mt-4 max-w-1/2 text-lg leading-8 text-gray-600 font-light"
                         >
                             Intelligent AI agents that automate workflows,
                             enhance productivity, and drive business growth.
@@ -62,11 +81,11 @@ export function Hero({ className = "" }: HeroProps) {
                         >
                             <a
                                 href="#"
-                                className="rounded-full bg-white px-8 py-4 text-base font-semibold text-black shadow-lg hover:bg-zinc-200 transition-all transform hover:scale-105"
+                                className="rounded-full bg-teal-400 px-8 py-4 text-base font-semibold text-white shadow-lg hover:bg-teal-500 transition-all transform hover:scale-105"
                             >
                                 Start Building
                             </a>
-                            <a href="#" className="group flex items-center gap-2 text-base font-semibold leading-6 text-white hover:text-zinc-300 transition-colors">
+                            <a href="#" className="group flex items-center gap-2 text-base font-semibold leading-6 text-blue-500 hover:text-blue-600 transition-colors">
                                 View Documentation
                                 <span className="transition-transform group-hover:translate-x-1">→</span>
                             </a>

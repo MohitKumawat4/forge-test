@@ -5,35 +5,41 @@ import Image from "next/image";
 export function LeftArrow({ className = "" }: { className?: string }) {
     return (
         <div className={`absolute hidden lg:block ${className}`}>
-            <div className="relative flex items-center gap-2">
-                <motion.p
+            <div className="relative flex items-start gap-4">
+                <motion.div
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8, delay: 1 }}
-                    className="text-center whitespace-nowrap"
-                    style={{
-                        fontFamily: '"Kalam", sans-serif',
-                        fontSize: '18px',
-                        fontWeight: 700,
-                        letterSpacing: '0px',
-                        lineHeight: '1.1em',
-                        color: 'rgb(255, 255, 255)'
-                    }}
+                    className="border-2 border-gray-800/10 rounded-full px-5 py-2.5 bg-white/40 backdrop-blur-sm shadow-sm"
                 >
-                    Try our AI Agents!
-                </motion.p>
+                    <p
+                        className="text-center whitespace-nowrap text-gray-800"
+                        style={{
+                            fontFamily: '"Kalam", sans-serif',
+                            fontSize: '16px',
+                            fontWeight: 600,
+                            letterSpacing: '0px',
+                            lineHeight: '1.1em',
+                        }}
+                    >
+                        Try our AI Agents!
+                    </p>
+                </motion.div>
                 <motion.div
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
+                    initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
+                    animate={{ opacity: 1, scale: 1, rotate: 0 }}
                     transition={{ duration: 0.8, delay: 1.2 }}
-                    className="relative w-[120px] h-[100px]"
-                    style={{ filter: 'brightness(0) invert(1)' }}
+                    className="relative w-[100px] h-[80px] mt-4"
+                    style={{
+                        filter: 'invert(68%) sepia(63%) saturate(452%) hue-rotate(126deg) brightness(90%) contrast(89%)',
+                        transform: 'scaleX(-1) rotate(20deg)' // Adjusting orientation to point correctly
+                    }}
                 >
                     <Image
                         src="/left_arrow.avif"
                         alt="Left arrow"
-                        width={120}
-                        height={100}
+                        width={100}
+                        height={80}
                         className="object-contain"
                     />
                 </motion.div>
@@ -46,38 +52,44 @@ export function LeftArrow({ className = "" }: { className?: string }) {
 export function RightArrow({ className = "" }: { className?: string }) {
     return (
         <div className={`absolute hidden lg:block ${className}`}>
-            <div className="relative flex items-center gap-2">
+            <div className="relative flex items-start gap-4">
                 <motion.div
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
+                    initial={{ opacity: 0, scale: 0.8, rotate: 10 }}
+                    animate={{ opacity: 1, scale: 1, rotate: 0 }}
                     transition={{ duration: 0.8, delay: 1.2 }}
-                    className="relative w-[120px] h-[100px]"
-                    style={{ filter: 'brightness(0) invert(1)' }}
+                    className="relative w-[100px] h-[80px] mt-4"
+                    style={{
+                        filter: 'invert(68%) sepia(63%) saturate(452%) hue-rotate(126deg) brightness(90%) contrast(89%)',
+                        transform: 'rotate(-20deg)'
+                    }}
                 >
                     <Image
                         src="/right_arrow.avif"
                         alt="Right arrow"
-                        width={120}
-                        height={100}
+                        width={100}
+                        height={80}
                         className="object-contain"
                     />
                 </motion.div>
-                <motion.p
+                <motion.div
                     initial={{ opacity: 0, x: 10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8, delay: 1 }}
-                    className="text-center whitespace-nowrap"
-                    style={{
-                        fontFamily: '"Kalam", sans-serif',
-                        fontSize: '18px',
-                        fontWeight: 700,
-                        letterSpacing: '0px',
-                        lineHeight: '1.1em',
-                        color: 'rgb(255, 255, 255)'
-                    }}
+                    className="border-2 border-gray-800/10 rounded-full px-5 py-2.5 bg-white/40 backdrop-blur-sm shadow-sm"
                 >
-                    Try our AI Agents!
-                </motion.p>
+                    <p
+                        className="text-center whitespace-nowrap text-gray-800"
+                        style={{
+                            fontFamily: '"Kalam", sans-serif',
+                            fontSize: '16px',
+                            fontWeight: 600,
+                            letterSpacing: '0px',
+                            lineHeight: '1.1em',
+                        }}
+                    >
+                        Try our AI Agents!
+                    </p>
+                </motion.div>
             </div>
         </div>
     );

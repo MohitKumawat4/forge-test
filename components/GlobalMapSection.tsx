@@ -33,7 +33,7 @@ export function GlobalMapSection({ className = "" }: GlobalMapSectionProps) {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden bg-zinc-900/50 ring-1 ring-white/10"
+                    className="relative w-full aspect-video overflow-hidden"
                 >
                     <Image
                         src="/_map.png"
@@ -44,7 +44,8 @@ export function GlobalMapSection({ className = "" }: GlobalMapSectionProps) {
                     />
 
                     {/* Gradient overlay for better integration */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-black/20 pointer-events-none" />
+                    <div className="absolute inset-0 bg-linear-gradient-to-t from-black via-transparent to-black pointer-events-none" />
+                    <div className="absolute inset-0 bg-linear-gradient-to-r from-black via-transparent to-black pointer-events-none" />
                 </motion.div>
 
                 {/* Optional: Stats below map */}
