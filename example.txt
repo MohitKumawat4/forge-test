@@ -1,1 +1,39 @@
 <p class="framer-text" style="--font-selector: RlM7S2FsYW0tYm9sZA==; --framer-font-family: &quot;Kalam&quot;, sans-serif; --framer-font-size: 18px; --framer-font-weight: 700; --framer-letter-spacing: 0px; --framer-line-height: 1.1em; --framer-text-alignment: center; --framer-text-color: var(--token-ac6bf485-0e38-46fd-9483-ed2319ffe186, rgb(18, 10, 11));">Try our AI Agents!</p>
+
+
+   {/* 3D Spline Background */}
+            <div className="absolute inset-0 z-0">
+                <Spline
+                    scene="/MASCOT.spline"
+                    className="w-full h-full bg-transparent"
+                />
+            </div>
+
+            {/* Background Gradients/Blobs - Adjusted to match reference image colors */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+                {/* Top Left - Soft Purple/White Glow */}
+                <div className="absolute -top-[10%] -left-[10%] w-[60%] h-[60%] rounded-full bg-purple-100/50 blur-[100px] mix-blend-multiply" />
+
+                {/* Top Right - Cool Blue Accent */}
+                <div className="absolute top-[10%] -right-[10%] w-[50%] h-[50%] rounded-full bg-blue-200/40 blur-[100px] mix-blend-multiply" />
+
+                {/* Bottom Left - Strong Pink Glow */}
+                <div className="absolute -bottom-[10%] left-[5%] w-[50%] h-[50%] rounded-full bg-pink-300/30 blur-[100px] mix-blend-multiply" />
+
+                {/* Bottom Right - Soft Indigo/Lavender */}
+                <div className="absolute -bottom-[10%] -right-[10%] w-[50%] h-[50%] rounded-full bg-indigo-200/30 blur-[100px] mix-blend-multiply" />
+            </div>
+
+             <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+                {/* Top Left - Soft Purple/White Glow */}
+                <div className="absolute -top-[10%] -left-[10%] w-[60%] h-[60%] rounded-full bg-purple-100/50 blur-[100px] mix-blend-multiply" />
+
+                {/* Top Right - Cool Blue Accent */}
+                <div className="absolute top-[10%] -right-[10%] w-[50%] h-[50%] rounded-full bg-blue-200/40 blur-[100px] mix-blend-multiply" />
+
+                {/* Bottom Left - Strong Pink Glow */}
+                <div className="absolute -bottom-[10%] left-[5%] w-[50%] h-[50%] rounded-full bg-pink-300/30 blur-[100px] mix-blend-multiply" />
+
+                {/* Bottom Right - Soft Indigo/Lavender */}
+                <div className="absolute -bottom-[10%] -right-[10%] w-[50%] h-[50%] rounded-full bg-indigo-200/30 blur-[100px] mix-blend-multiply" />
+            </div>

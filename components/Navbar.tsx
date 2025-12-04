@@ -19,16 +19,16 @@ export function Navbar({ className = "" }: NavbarProps) {
                 </div>
 
                 <div className="hidden md:flex items-center gap-1 rounded-full bg-white px-2 py-1.5 shadow-sm border border-gray-100">
-                    <Link href="#" className="text-sm font-semibold text-teal-600 bg-teal-50 rounded-full px-4 py-1.5 transition-colors">
+                    <Link href="#" className="text-sm font-medium text-gray-600 hover:text-gray-900 px-4 py-1.5 transition-colors rounded-full hover:bg-teal-300 hover:scale-105">
                         Solutions
                     </Link>
-                    <Link href="#" className="text-sm font-medium text-gray-600 hover:text-gray-900 px-4 py-1.5 transition-colors">
+                    <Link href="#" className="text-sm font-medium text-gray-600 hover:text-gray-900 px-4 py-1.5 transition-colors rounded-full hover:bg-teal-300 hover:scale-105">
                         Products
                     </Link>
-                    <Link href="#" className="text-sm font-medium text-gray-600 hover:text-gray-900 px-4 py-1.5 transition-colors">
+                    <Link href="#" className="text-sm font-medium text-gray-600 hover:text-gray-900 px-4 py-1.5 transition-colors rounded-full hover:bg-teal-300 hover:scale-105">
                         Company
                     </Link>
-                    <Link href="#" className="text-sm font-medium text-gray-600 hover:text-gray-900 px-4 py-1.5 transition-colors">
+                    <Link href="#" className="text-sm font-medium text-gray-600 hover:text-gray-900 px-4 py-1.5 transition-colors rounded-full hover:bg-teal-300 hover:scale-105">
                         Resources
                     </Link>
                 </div>

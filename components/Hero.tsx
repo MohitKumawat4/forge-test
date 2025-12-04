@@ -15,7 +15,7 @@ export function Hero({ className = "" }: HeroProps) {
         <div
             className={`relative flex min-h-screen flex-col justify-start overflow-hidden pt-48 ${className}`}
             style={{
-                background: 'radial-gradient(circle at 20% 20%, #ffffff 0%, #fdf4ff 25%, #f5f3ff 50%, #eef2ff 100%)'
+                // background: 'radial-gradient(circle at 20% 20%, #f8f8ff 0%, #e0e8ff 25%, #cce0ff 60%, #b8c8e0 100%)'
             }}
         >
             {/* 3D Spline Background */}
@@ -26,29 +26,21 @@ export function Hero({ className = "" }: HeroProps) {
                 />
             </div>
 
-            {/* Background Gradients/Blobs - Adjusted to match reference image colors */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-                {/* Top Left - Soft Purple/White Glow */}
-                <div className="absolute -top-[10%] -left-[10%] w-[60%] h-[60%] rounded-full bg-purple-100/50 blur-[100px] mix-blend-multiply" />
-
-                {/* Top Right - Cool Blue Accent */}
-                <div className="absolute top-[10%] -right-[10%] w-[50%] h-[50%] rounded-full bg-blue-200/40 blur-[100px] mix-blend-multiply" />
-
-                {/* Bottom Left - Strong Pink Glow */}
-                <div className="absolute -bottom-[10%] left-[5%] w-[50%] h-[50%] rounded-full bg-pink-300/30 blur-[100px] mix-blend-multiply" />
-
-                {/* Bottom Right - Soft Indigo/Lavender */}
-                <div className="absolute -bottom-[10%] -right-[10%] w-[50%] h-[50%] rounded-full bg-indigo-200/30 blur-[100px] mix-blend-multiply" />
-            </div>
+            {/* Background Gradients/Blobs - Moved after Spline to overlay if Spline is opaque */}
+            {/* <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+                <div className="absolute -top-[20%] -left-[10%] w-[70%] h-[70%] rounded-full bg-purple-200/40 blur-[120px] mix-blend-multiply" />
+                <div className="absolute top-[20%] -right-[10%] w-[60%] h-[60%] rounded-full bg-blue-200/40 blur-[120px] mix-blend-multiply" />
+                <div className="absolute -bottom-[20%] left-[20%] w-[50%] h-[50%] rounded-full bg-pink-200/40 blur-[120px] mix-blend-multiply" />
+            </div> */}
 
             {/* Content */}
             <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 w-full pointer-events-none">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div className="flex flex-col items-start text-left pt-10 lg:pt-0 pointer-events-auto">
                         {/* Announcement Card */}
-                        <div className="mb-8">
+                        {/* <div className="mb-8">
                             <AnnouncementCard />
-                        </div>
+                        </div> */}
 
                         <motion.h1
                             initial={{ opacity: 0, y: 20 }}
