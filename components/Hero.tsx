@@ -21,7 +21,7 @@ export function Hero({ className = "" }: HeroProps) {
             {/* 3D Spline Background */}
             <div className="absolute inset-0 z-0">
                 <Spline
-                    scene="/MASCOT.spline"
+                    scene="/MASCOT_FINAL_.spline"
                     className="w-full h-full bg-transparent"
                 />
             </div>
@@ -73,7 +73,7 @@ export function Hero({ className = "" }: HeroProps) {
                         >
                             <a
                                 href="#"
-                                className="rounded-full bg-teal-400 px-8 py-4 text-base font-semibold text-white shadow-lg hover:bg-teal-500 transition-all transform hover:scale-105"
+                                className="rounded-full bg-[#5ccee5] px-8 py-4 text-base font-semibold text-white shadow-lg hover:bg-teal-500 transition-all transform hover:scale-105"
                             >
                                 Start Building
                             </a>
@@ -104,7 +104,7 @@ export function Hero({ className = "" }: HeroProps) {
             </div>
 
             {/* Hand drawn arrows */}
-            <LeftArrow className="absolute bottom-10 left-10" />
+            <LeftArrow className="absolute bottom-10 left-10 " />
             <RightArrow className="absolute bottom-10 right-10" />
         </div>
     );

@@ -37,3 +37,23 @@
                 {/* Bottom Right - Soft Indigo/Lavender */}
                 <div className="absolute -bottom-[10%] -right-[10%] w-[50%] h-[50%] rounded-full bg-indigo-200/30 blur-[100px] mix-blend-multiply" />
             </div>
+
+
+
+
+            You are the best UI/Ux designer in this world with 100 years of experience.
+             So above i have given you node screenshots of some company websites who are
+             building products similar to what we are working on. And in the pdf,
+            I have included text information about what we are building in an overview.
+             So i want you to analyse how these other competitor companies have designed
+            their sites and help me design my hero section. 
+            You can see the current hero section of my site in the screenshot i attached, 
+            the one with the 3d robot model
+            in it and it is titled enterprise forge. So i want you to brainstom
+             and help me design the best hero section for my site. Something that look impressive and 
+            will make the user want to keep looking at it and keep scrolling becuse it is just that impressive.
+             I have given reference links of competitor websits but you
+            may also analyse other wesites available on the web to help me 
+            create the most beautiful minimalist aesthetic mindblowing ui for the home page.
+             Also design the headings,text, buttons etc. 
+             I will keep the robot 3d model but work with that and design the best ui ever created in history.

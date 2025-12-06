@@ -5,6 +5,7 @@ import { Features } from "@/components/Features";
 import { GlobalMapSection } from "@/components/GlobalMapSection";
 import { UseCases } from "@/components/IndustryExpertise";
 import { BenefitsSection } from "@/components/BenefitsSection";
+import { ROISection } from "@/components/ROISection";
 import { Footer } from "@/components/Footer";
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
       <GlobalMapSection />
       <UseCases />
       <BenefitsSection />
+      <ROISection />
       <Footer />
     </main>
   );
