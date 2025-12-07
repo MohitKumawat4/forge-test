@@ -82,11 +82,12 @@ export function UseCases({ className = "" }: UseCasesProps) {
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_left,var(--tw-gradient-stops))] from-stone-100/50 via-white to-white" />
                 <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_bottom_right,var(--tw-gradient-stops))] from-stone-100/50 via-white to-white" />
+                <div className="absolute top-0 left-0 w-full h-32 bg-linear-to-b from-black to-transparent z-10" />
             </div>
 
             <div className="sticky top-0 h-screen flex items-center overflow-hidden">
                 {/* Background Image */}
-                <div
+                {/* <div
                     className="absolute inset-0 z-0"
                     style={{
                         backgroundImage: "url('/USE_BG.png')",
@@ -94,7 +95,7 @@ export function UseCases({ className = "" }: UseCasesProps) {
                         backgroundPosition: "center",
                         backgroundRepeat: "no-repeat",
                     }}
-                />
+                /> */}
                 <div className="mx-auto max-w-7xl px-6 lg:px-8 w-full relative z-10">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
@@ -102,10 +103,10 @@ export function UseCases({ className = "" }: UseCasesProps) {
                         <div className="flex flex-col justify-center">
                             <div className="mb-12">
                                 <h2 className="text-base font-semibold leading-7 text-[#A67C6D]">Use Cases</h2>
-                                <p className="mt-2 text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl">
+                                <p className="mt-2 text-h2-apple text-zinc-900">
                                     Transform Every Department
                                 </p>
-                                <p className="mt-6 text-lg leading-8 text-zinc-800 font-medium">
+                                <p className="mt-6 text-p1-apple text-zinc-800">
                                     Our AI platform adapts to your business needs, whether you're in e-commerce, SaaS, finance, or any other industry.
                                 </p>
                             </div>
@@ -132,7 +133,7 @@ export function UseCases({ className = "" }: UseCasesProps) {
                                                 <h3 className="text-xl font-bold leading-7 text-zinc-900 mb-2">
                                                     {useCases[activeIndex].name}
                                                 </h3>
-                                                <p className="text-base leading-7 text-zinc-900 font-medium">
+                                                <p className="text-body-apple text-zinc-900">
                                                     {useCases[activeIndex].description}
                                                 </p>
                                                 <div className={`mt-4 flex items-center ${useCases[activeIndex].textColor} text-sm font-bold cursor-pointer hover:opacity-80 transition-opacity`}>

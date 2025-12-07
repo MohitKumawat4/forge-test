@@ -8,13 +8,13 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Override default sans font */
+  --font-sans: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #000000;
     --foreground: #ededed;
   }
 }
@@ -26,9 +26,86 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Typography Utilities based on Apple Design */
+@layer utilities {
+  .text-h1-apple {
+    font-family: var(--font-sans);
+    font-size: 48px;
+    /* Mobile */
+    line-height: 1.0714285714;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+  }
+
+  @media (min-width: 768px) {
+    .text-h1-apple {
+      font-size: 56px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .text-h1-apple {
+      font-size: 64px;
+    }
+  }
+
+  .text-h2-apple {
+    font-family: var(--font-sans);
+    font-size: 32px;
+    line-height: 1.1;
+    font-weight: 600;
+    letter-spacing: 0.004em;
+  }
+
+  @media (min-width: 768px) {
+    .text-h2-apple {
+      font-size: 40px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .text-h2-apple {
+      font-size: 48px;
+    }
+  }
+
+  .text-p1-apple {
+    font-family: var(--font-sans);
+    font-size: 19px;
+    line-height: 1.4211;
+    font-weight: 400;
+    /* Regular */
+    letter-spacing: 0.012em;
+  }
+
+  @media (min-width: 768px) {
+    .text-p1-apple {
+      font-size: 21px;
+      /* Intro text size often used by Apple */
+      font-weight: 500;
+      /* Sometimes Medium for intro text */
+    }
+  }
+
+  .text-p2-apple {
+    font-family: var(--font-sans);
+    font-size: 17px;
+    line-height: 1.47059;
+    font-weight: 400;
+    letter-spacing: -0.022em;
+  }
+
+  .text-body-apple {
+    font-family: var(--font-sans);
+    font-size: 17px;
+    line-height: 1.5;
+    font-weight: 400;
+  }
 }
 
 ::selection {

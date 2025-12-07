@@ -25,11 +25,11 @@ export function StatsSection({ className = "" }: StatsSectionProps) {
     const duplicatedStats = [...stats, ...stats];
 
     return (
-        <div className={`bg-zinc-950 py-8 overflow-hidden border-y border-white/10 ${className}`}>
+        <div className={`bg-zinc-950 py-8 overflow-hidden ${className}`}>
             <div className="relative">
                 {/* Gradient overlays for fade effect on edges */}
-                <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-zinc-950 to-transparent z-10" />
-                <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-zinc-950 to-transparent z-10" />
+                <div className="absolute left-0 top-0 bottom-0 w-32 bg-linear-to-r from-zinc-950 to-transparent z-10" />
+                <div className="absolute right-0 top-0 bottom-0 w-32 bg-linear-to-l from-zinc-950 to-transparent z-10" />
 
                 {/* Scrolling container */}
                 <motion.div

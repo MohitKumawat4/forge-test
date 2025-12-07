@@ -19,10 +19,10 @@ export function GlobalMapSection({ className = "" }: GlobalMapSectionProps) {
                     transition={{ duration: 0.6 }}
                     className="mx-auto max-w-2xl text-center mb-16"
                 >
-                    <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                    <h2 className="text-h2-apple text-white">
                         Serving Enterprises from 30+ Countries
                     </h2>
-                    <p className="mt-6 text-lg leading-8 text-zinc-400">
+                    <p className="mt-6 text-p1-apple text-zinc-400">
                         Our AI-powered platform is trusted by businesses worldwide, delivering intelligent automation across continents.
                     </p>
                 </motion.div>

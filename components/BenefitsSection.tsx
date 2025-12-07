@@ -1,132 +1,145 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ArrowRight, Box, Layers, Settings, Zap } from "lucide-react";
+import Image from "next/image";
 
 const benefits = [
     {
-        title: "AI-Powered Intelligence",
-        description: "Leverage cutting-edge AI to automate complex workflows and make smarter decisions faster.",
+        title: "Use a pre-integrated platform",
+        description: "Explore our library to find out-of-the-box solutions that connect with your existing stack instantly.",
+        cta: "Explore directory",
+        icon: Layers,
+        color: "bg-blue-500",
+        image: "/features/ai-agents.png" // Fallback to existing asset if needed or use icon
     },
     {
-        title: "Instant Deployment",
-        description: "Get started in minutes, not months. Deploy AI agents across your organization with zero setup time.",
+        title: "Build with AI-certified experts",
+        description: "Work with a consulting partner that can integrate and deploy custom AI solutions for you.",
+        cta: "View partners",
+        icon: Settings,
+        color: "bg-purple-500",
+        image: "/features/workflow.png"
     },
     {
-        title: "Enterprise-Grade Security",
-        description: "SOC2 compliant infrastructure with end-to-end encryption. Your data stays secure and private.",
-    },
-    {
-        title: "Actionable Insights",
-        description: "Transform raw data into strategic insights with AI-powered analytics and reporting.",
-    },
+        title: "Try our no-code products",
+        description: "Set up intelligent automation, accept inputs, and generate outputs directly from your Dashboard.",
+        cta: "Start building",
+        icon: Box,
+        color: "bg-emerald-500",
+        image: "/features/analytics.png"
+    }
 ];
 
-interface BenefitsSectionProps {
-    className?: string;
-}
+const graphicContainerVariants = {
+    initial: { height: 280 },
+    hover: { height: 200, transition: { duration: 0.4, ease: "easeOut" } }
+} as const;
 
-export function BenefitsSection({ className = "" }: BenefitsSectionProps) {
+const imageVariants = {
+    initial: { scale: 1, y: 0 },
+    hover: { scale: 0.85, y: -10, transition: { duration: 0.4, ease: "easeOut" } }
+} as const;
+
+const textVariants = {
+    initial: { y: 0 },
+    hover: { y: 0, transition: { duration: 0.4, ease: "easeOut" } } // Text doesn't need to move if container shrinks, flow pulls it up? 
+    // Actually, if we shrink height, text moves up. Let's rely on flow or slight adjust.
+    // If we want text content to "move closer", shrinking image height does that.
+} as const;
+
+const ctaVariants = {
+    initial: { opacity: 0, y: 10 },
+    hover: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut", delay: 0.1 } }
+} as const;
+
+export function BenefitsSection({ className = "" }: { className?: string }) {
     return (
-        <div className={`relative min-h-screen flex flex-col items-center justify-center overflow-hidden pb-20 ${className}`}>
-            {/* Background Image */}
-            {/* <div
-                className="absolute inset-0 z-0"
-                style={{
-                    backgroundImage: "url('/WHY_BG.png')",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    backgroundRepeat: "no-repeat",
-                }}
-            /> */}
+        <section className={`py-32 bg-white relative overflow-hidden ${className}`}>
+            {/* Background Grid Lines (Stripe-like) */}
+            <div className="absolute inset-0 mx-auto max-w-7xl px-6 lg:px-8 pointer-events-none">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 h-full border-l border-r border-dashed border-slate-200/60 mx-auto">
+                    <div className="hidden md:block border-r border-dashed border-slate-200/60 h-full" />
+                    <div className="hidden md:block border-r border-dashed border-slate-200/60 h-full" />
+                </div>
+            </div>
 
-            {/* Moving Spotlights to simulate light tracing */}
-            <motion.div
-                className="absolute top-0 left-0 w-[600px] h-[600px] bg-emerald-500/20 rounded-full blur-[120px] pointer-events-none mix-blend-overlay"
-                animate={{
-                    x: ["-20%", "120%", "-20%"],
-                    y: ["0%", "50%", "0%"],
-                }}
-                transition={{
-                    duration: 15,
-                    repeat: Infinity,
-                    ease: "linear",
-                }}
-            />
-            <motion.div
-                className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-purple-500/20 rounded-full blur-[100px] pointer-events-none mix-blend-overlay"
-                animate={{
-                    x: ["20%", "-120%", "20%"],
-                    y: ["0%", "-50%", "0%"],
-                }}
-                transition={{
-                    duration: 12,
-                    repeat: Infinity,
-                    ease: "linear",
-                    delay: 2,
-                }}
-            />
+            <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
 
-            <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 w-full h-full flex flex-col justify-center">
-                <div className="mx-auto max-w-2xl text-center mb-20">
-                    <h2 className="text-3xl font-bold tracking-tight text-black sm:text-4xl">
-                        Why Choose Our Platform?
+                {/* Header Section */}
+                <div className="max-w-2xl mb-24 text-left relative z-10">
+                    <h3 className="text-sm font-bold text-[#635bff] tracking-wider uppercase mb-5">
+                        Launch with ease
+                    </h3>
+                    <h2 className="text-4xl md:text-[46px] font-bold text-[#0a2540] mb-8 tracking-tight leading-[1.15]">
+                        Low- and no-code options for<br />
+                        getting started
                     </h2>
-                    <p className="mt-6 text-lg leading-8 text-zinc-600">
-                        Built for modern businesses that demand speed, security, and scalability.
+                    <p className="text-lg text-[#425466] leading-relaxed max-w-xl">
+                        If you'd like to use Enterprise Forge for your business but don't have developers on staff, no problem. We have a few options depending on your needs.
                     </p>
                 </div>
 
-                <div className="mx-auto max-w-7xl w-full">
-                    <dl className="grid grid-cols-1 gap-y-16 gap-x-24 lg:grid-cols-2 lg:gap-x-128 lg:gap-y-32">
-                        {benefits.map((benefit, index) => {
-                            const isLeftColumn = index % 2 === 0;
-                            return (
-                                <motion.div
-                                    key={benefit.title}
-                                    initial={{ opacity: 0, x: isLeftColumn ? -20 : 20 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                                    className={`flex flex-col ${isLeftColumn ? "lg:text-right lg:items-end" : "lg:text-left lg:items-start"} text-center items-center`}
-                                >
-                                    <dt className="text-xl font-bold leading-7 text-black">
-                                        {benefit.title}
-                                    </dt>
-                                    <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-zinc-600 max-w-sm">
-                                        <p className="flex-auto">{benefit.description}</p>
-                                    </dd>
-                                </motion.div>
-                            );
-                        })}
-                    </dl>
-                </div>
-
-                <div className="flex justify-end w-full mt-16 px-4">
-                    <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="group relative inline-flex items-center gap-2 px-8 py-3 bg-black text-white rounded-full overflow-hidden transition-all hover:shadow-[0_0_20px_rgba(16,185,129,0.5)]"
-                    >
-                        <div className="absolute inset-0 bg-linear-to-r from-emerald-300 to-purple-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                        <span className="relative z-10 font-medium">Know More</span>
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            className="relative z-10 transition-transform group-hover:translate-x-1"
+                {/* Cards Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+                    {benefits.map((benefit, index) => (
+                        <motion.div
+                            key={index}
+                            initial="initial"
+                            whileHover="hover"
+                            className="group relative flex flex-col rounded-lg overflow-hidden bg-white shadow-[0_1px_3px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_40px_-5px_rgba(0,0,0,0.1)] transition-shadow duration-300 transform-gpu bg-white"
                         >
-                            <path d="M5 12h14" />
-                            <path d="m12 5 7 7-7 7" />
-                        </svg>
-                    </motion.button>
+                            {/* Graphic Area (Container) */}
+                            <motion.div
+                                variants={graphicContainerVariants}
+                                className="w-full bg-[#f6f9fc] flex items-center justify-center overflow-hidden relative border-b border-slate-100"
+                            >
+                                <motion.div
+                                    variants={imageVariants}
+                                    className="relative w-full h-full flex items-center justify-center p-8"
+                                >
+                                    {/* Placeholder Illustration Components */}
+                                    <div className="relative z-10 flex items-center justify-center w-full h-full">
+                                        {/* Inner Content Box (The "Visible Container" user asked for?) */}
+                                        <div className="relative w-full max-w-[200px] aspect-square rounded-xl bg-white border border-slate-200 shadow-sm flex items-center justify-center">
+                                            {/* Icon/Content */}
+                                            <div className="relative z-10">
+                                                <benefit.icon className={`w-12 h-12 ${benefit.color.replace('bg-', 'text-')}`} />
+                                            </div>
+
+                                            {/* Decorative colored blobs inside the box */}
+                                            <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full ${benefit.color} opacity-10 blur-xl`} />
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            </motion.div>
+
+                            {/* Content Area */}
+                            <div className="flex-1 px-8 pt-8 pb-10 relative bg-white z-20 flex flex-col justify-between">
+                                <div>
+                                    <h3 className="text-[19px] font-bold text-[#0a2540] mb-3 leading-snug">
+                                        {benefit.title}
+                                    </h3>
+                                    <p className="text-[15px] text-[#425466] leading-relaxed">
+                                        {benefit.description}
+                                    </p>
+                                </div>
+
+                                {/* CTA Link */}
+                                <motion.div
+                                    variants={ctaVariants}
+                                    className="mt-6 flex items-center"
+                                >
+                                    <a href="#" className="flex items-center gap-1.5 text-[#635bff] font-semibold text-[15px] hover:text-[#0a2540] transition-colors group-hover:gap-2">
+                                        {benefit.cta}
+                                        <ArrowRight className="w-4 h-4" />
+                                    </a>
+                                </motion.div>
+                            </div>
+                        </motion.div>
+                    ))}
                 </div>
             </div>
-        </div>
+        </section>
     );
 }

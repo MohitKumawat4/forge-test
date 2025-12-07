@@ -1,3 +1,4 @@
+import { Preloader } from "@/components/Preloader";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { StatsSection } from "@/components/StatsSection";
@@ -11,6 +12,7 @@ import { Footer } from "@/components/Footer";
 export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white selection:bg-blue-500 selection:text-white">
+      <Preloader />
       <Navbar />
       <Hero />
       <StatsSection />

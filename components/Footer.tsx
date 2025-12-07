@@ -71,7 +71,7 @@ export function Footer({ className = "" }: FooterProps) {
                 {/* Top Section: Contact & Social */}
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 gap-8">
                     <div>
-                        <h3 className="text-3xl md:text-4xl font-semibold tracking-tight">
+                        <h3 className="text-3xl md:text-4xl font-semibold tracking-tight font-sans">
                             How can we help? <Link href="#" className="text-blue-500 hover:text-blue-400 underline decoration-2 underline-offset-4 transition-colors">Contact us</Link>
                         </h3>
                     </div>
@@ -88,11 +88,11 @@ export function Footer({ className = "" }: FooterProps) {
                 {/* Middle Section: Links Grid */}
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-24">
                     <div>
-                        <h3 className="text-lg font-bold mb-6">Products</h3>
+                        <h3 className="text-p1-apple font-bold text-white mb-6">Products</h3>
                         <ul role="list" className="space-y-4">
                             {navigation.products.map((item) => (
                                 <li key={item.name}>
-                                    <Link href={item.href} className="text-zinc-400 hover:text-blue-400 transition-colors">
+                                    <Link href={item.href} className="text-body-apple text-zinc-400 hover:text-blue-400 transition-colors">
                                         {item.name}
                                     </Link>
                                 </li>
@@ -100,11 +100,11 @@ export function Footer({ className = "" }: FooterProps) {
                         </ul>
                     </div>
                     <div>
-                        <h3 className="text-lg font-bold mb-6">Features</h3>
+                        <h3 className="text-p1-apple font-bold text-white mb-6">Features</h3>
                         <ul role="list" className="space-y-4">
                             {navigation.features.map((item) => (
                                 <li key={item.name}>
-                                    <Link href={item.href} className="text-zinc-400 hover:text-blue-400 transition-colors">
+                                    <Link href={item.href} className="text-body-apple text-zinc-400 hover:text-blue-400 transition-colors">
                                         {item.name}
                                     </Link>
                                 </li>
@@ -112,11 +112,11 @@ export function Footer({ className = "" }: FooterProps) {
                         </ul>
                     </div>
                     <div>
-                        <h3 className="text-lg font-bold mb-6">Resources</h3>
+                        <h3 className="text-p1-apple font-bold text-white mb-6">Resources</h3>
                         <ul role="list" className="space-y-4">
                             {navigation.resources.map((item) => (
                                 <li key={item.name}>
-                                    <Link href={item.href} className="text-zinc-400 hover:text-blue-400 transition-colors">
+                                    <Link href={item.href} className="text-body-apple text-zinc-400 hover:text-blue-400 transition-colors">
                                         {item.name}
                                     </Link>
                                 </li>
@@ -124,11 +124,11 @@ export function Footer({ className = "" }: FooterProps) {
                         </ul>
                     </div>
                     <div>
-                        <h3 className="text-lg font-bold mb-6">Company</h3>
+                        <h3 className="text-p1-apple font-bold text-white mb-6">Company</h3>
                         <ul role="list" className="space-y-4">
                             {navigation.company.map((item) => (
                                 <li key={item.name}>
-                                    <Link href={item.href} className="text-zinc-400 hover:text-blue-400 transition-colors">
+                                    <Link href={item.href} className="text-body-apple text-zinc-400 hover:text-blue-400 transition-colors">
                                         {item.name}
                                     </Link>
                                 </li>
@@ -136,11 +136,11 @@ export function Footer({ className = "" }: FooterProps) {
                         </ul>
                     </div>
                     <div>
-                        <h3 className="text-lg font-bold mb-6">Trending</h3>
+                        <h3 className="text-p1-apple font-bold text-white mb-6">Trending</h3>
                         <ul role="list" className="space-y-4">
                             {navigation.trending.map((item) => (
                                 <li key={item.name} className="flex items-center gap-2">
-                                    <Link href={item.href} className="text-zinc-400 hover:text-blue-400 transition-colors">
+                                    <Link href={item.href} className="text-body-apple text-zinc-400 hover:text-blue-400 transition-colors">
                                         {item.name}
                                     </Link>
                                     {item.badge && (
@@ -159,7 +159,7 @@ export function Footer({ className = "" }: FooterProps) {
             <div className="w-full border-t border-white/10">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     <div className="relative w-full overflow-hidden py-12 flex flex-col items-center justify-center">
-                        <h1 className="text-[12vw] leading-none font-bold tracking-tighter text-white whitespace-nowrap select-none">
+                        <h1 className="text-[12vw] leading-none font-bold tracking-tighter text-white whitespace-nowrap select-none font-sans">
                             Enterprise Forge
                         </h1>
                     </div>
@@ -167,12 +167,12 @@ export function Footer({ className = "" }: FooterProps) {
                     <div className="flex flex-col md:flex-row justify-between items-center py-8 border-t border-white/10 gap-4">
                         <div className="flex gap-6 flex-wrap justify-center">
                             {navigation.legal.map((item) => (
-                                <Link key={item.name} href={item.href} className="text-sm text-zinc-500 hover:text-white transition-colors">
+                                <Link key={item.name} href={item.href} className="text-sm text-zinc-500 hover:text-white transition-colors font-sans">
                                     {item.name}
                                 </Link>
                             ))}
                         </div>
-                        <p className="text-sm text-zinc-500">
+                        <p className="text-sm text-zinc-500 font-sans">
                             &copy; {new Date().getFullYear()} Enterprise Forge, Inc.
                         </p>
                     </div>

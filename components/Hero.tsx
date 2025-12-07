@@ -1,7 +1,7 @@
 "use client";
-
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Spline from "@splinetool/react-spline";
 import { LeftArrow, RightArrow } from "./HandDrawnArrow";
 import { AnnouncementCard } from "./AnnouncementCard";
@@ -10,7 +10,24 @@ interface HeroProps {
     className?: string;
 }
 
+const words = [
+    "AI-Powered Enterprise Apps",
+    "Autonomous AI Workflows",
+    "Enterprise AI Solutions",
+    "Intelligent AI Agents",
+    "AI-Optimized Internal Tools"
+];
+
 export function Hero({ className = "" }: HeroProps) {
+    const [index, setIndex] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setIndex((prev) => (prev + 1) % words.length);
+        }, 1800); // Wait 1.5s + 0.3s transition
+        return () => clearInterval(interval);
+    }, []);
+
     return (
         <div
             className={`relative flex min-h-screen flex-col justify-start overflow-hidden pt-48 ${className}`}
@@ -34,42 +51,45 @@ export function Hero({ className = "" }: HeroProps) {
             </div> */}
 
             {/* Content */}
-            <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 w-full pointer-events-none">
+            <div className="relative z-50 mx-auto max-w-7xl px-6 lg:px-8 w-full pointer-events-none">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div className="flex flex-col items-start text-left pt-10 lg:pt-0 pointer-events-auto">
+                    <div className="flex flex-col items-start text-left pt-10 lg:pt-0 pointer-events-auto -mt-15">
                         {/* Announcement Card */}
-                        {/* <div className="mb-8">
+                        <div className="mb-8">
                             <AnnouncementCard />
-                        </div> */}
+                        </div>
 
-                        <motion.h1
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, ease: "easeOut" }}
-                            className="max-w-4xl text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl mb-6"
-                        >
-                            Transform Your <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
-                                Business Logic
-                            </span>
-                        </motion.h1>
+                        {/* New H1 and P block with rotating text */}
+                        <div className="font-bold tracking-tight text-black text-5xl sm:text-6xl lg:text-7xl mb-8 leading-[1.1] flex flex-wrap gap-x-4 items-center">
+                            <span>Deploy</span>
+                            <div className="relative h-[1.1em] overflow-hidden min-w-[12ch]">
+                                <AnimatePresence mode="popLayout">
+                                    <motion.span
+                                        key={index}
+                                        initial={{ y: "100%" }}
+                                        animate={{ y: 0 }}
+                                        exit={{ y: "-100%" }}
+                                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                                        className="block h-[1.1em] text-[#5ccee5] whitespace-nowrap"
+                                    >
+                                        {words[index]}
+                                    </motion.span>
+                                </AnimatePresence>
+                            </div>
+                        </div>
 
-                        <motion.p
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-                            className="mt-4 max-w-1/2 text-lg leading-8 text-gray-600 font-light"
-                        >
-                            Intelligent AI agents that automate workflows,
-                            enhance productivity, and drive business growth.
-                            {/* Experience the future of enterprise automation today. */}
-                        </motion.p>
+                        <p className="mt-6 text-lg leading-8 text-zinc-600 max-w-3xl mb-10 block">
+                            The complete enterprise AI intelligence layer. Agents that engineer solutions,
+                            build custom tools, discover opportunities, optimize workflows and operations,
+                            orchestrate teams, and drive growth. Stop managing operations and start scaling.
+                            You focus on strategy and growth. We handle everything else.
+                        </p>
 
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-                            className="mt-10 flex flex-wrap items-center gap-6"
+                            className="mt-4 flex flex-wrap items-center gap-6"
                         >
                             <a
                                 href="#"
@@ -77,35 +97,27 @@ export function Hero({ className = "" }: HeroProps) {
                             >
                                 Start Building
                             </a>
-                            <a href="#" className="group flex items-center gap-2 text-base font-semibold leading-6 text-blue-500 hover:text-blue-600 transition-colors">
-                                View Documentation
+                            <a href="#" className="group flex items-center gap-2 text-base font-semibold leading-6 text-black hover:text-[#5ccee5] transition-colors">
+                                See Demo
                                 <span className="transition-transform group-hover:translate-x-1">→</span>
                             </a>
                         </motion.div>
 
-                        {/* <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ duration: 1, delay: 0.6 }}
-                            className="mt-12 flex items-center gap-4 text-sm text-zinc-500"
-                        >
-                            <div className="flex -space-x-2">
-                                {[1, 2, 3, 4].map((i) => (
-                                    <div key={i} className="h-8 w-8 rounded-full bg-zinc-800 ring-2 ring-black border border-zinc-700" />
-                                ))}
-                            </div>
-                            <p>Trusted by 150+ Global Enterprises</p>
-                        </motion.div> */}
+
                     </div>
 
                     {/* Empty column for the robot mascot */}
                     <div className="hidden lg:block" />
                 </div>
-            </div>
 
-            {/* Hand drawn arrows */}
-            <LeftArrow className="absolute bottom-10 left-10 " />
-            <RightArrow className="absolute bottom-10 right-10" />
+                {/* Bottom Section: Enterprise Details */}
+
+
+
+
+                {/* Bottom Gradient Blend to White */}
+                {/* <div className="absolute bottom-0 left-0 w-full h-32 bg-linear-to-t from-white to-transparent pointer-events-none z-20" /> */}
+            </div>
         </div>
     );
 }

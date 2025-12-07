@@ -78,25 +78,18 @@ interface FeaturesProps {
 
 export function Features({ className = "" }: FeaturesProps) {
     return (
-        <section className={`relative bg-black py-24 sm:py-32 overflow-hidden ${className}`}>
-            {/* Gradient Background Image */}
-            {/* <div className="absolute inset-0 z-0">
+        <section className={`relative bg-white py-24 sm:py-32 overflow-hidden -mt-1 ${className}`}>
+            {/* Background Image */}
+            <div className="absolute inset-0 z-0">
                 <Image
-                    src="/GRADIENT_BG.png"
-                    alt="Gradient Background"
+                    src="/BLUE_BG.png"
+                    alt="Blue Background"
                     fill
-                    className="object-cover object-top"
+                    className="object-cover object-center"
                     quality={100}
                     priority
                 />
-            </div> */}
-
-            {/* Background Connection with Hero */}
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent z-10" />
-
-            {/* Ambient Background Blobs */}
-            <div className="absolute top-1/4 left-0 w-96 h-96 bg-purple-500/10 blur-[120px] rounded-full pointer-events-none z-0" />
-            <div className="absolute bottom-0 right-0 w-96 h-96 bg-pink-500/10 blur-[120px] rounded-full pointer-events-none z-0" />
+            </div>
 
             <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="mx-auto max-w-2xl lg:text-center mb-16">
@@ -114,7 +107,7 @@ export function Features({ className = "" }: FeaturesProps) {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: 0.1 }}
-                        className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-5xl"
+                        className="mt-2 text-h2-apple text-white"
                     >
                         Built for <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">Scale & Speed</span>
                     </motion.p>
@@ -123,7 +116,7 @@ export function Features({ className = "" }: FeaturesProps) {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: 0.2 }}
-                        className="mt-6 text-lg leading-8 text-zinc-400"
+                        className="mt-6 text-p1-apple text-zinc-300"
                     >
                         From AI-powered automation to advanced analytics, our platform provides all the tools you need to transform your business operations.
                     </motion.p>
@@ -138,17 +131,17 @@ export function Features({ className = "" }: FeaturesProps) {
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             whileHover={{ scale: 1.02 }}
-                            className={`relative group overflow-hidden rounded-3xl border border-white/10 bg-zinc-900/50 backdrop-blur-xl p-8 hover:border-white/20 transition-all duration-300 ${feature.className}`}
+                            className={`relative group overflow-hidden rounded-3xl border border-white/10 bg-black/20 backdrop-blur-md p-8 hover:border-white/30 hover:bg-black/40 transition-all duration-300 ${feature.className}`}
                         >
-                            {/* Background Image */}
+                            {/* Background Image - Subtle overlay */}
                             <div className="absolute inset-0 z-0">
                                 <Image
                                     src={feature.image}
                                     alt={feature.name}
                                     fill
-                                    className="object-cover opacity-30 group-hover:opacity-50 transition-opacity duration-500 mix-blend-overlay"
+                                    className="object-cover opacity-20 group-hover:opacity-40 transition-opacity duration-500 mix-blend-overlay"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/20" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                             </div>
 
                             {/* Hover Gradient Background (Overlay) */}
@@ -162,7 +155,7 @@ export function Features({ className = "" }: FeaturesProps) {
                                     <h3 className="text-xl font-semibold leading-7 text-white mb-2 drop-shadow-md">
                                         {feature.name}
                                     </h3>
-                                    <p className="text-base leading-7 text-zinc-300 group-hover:text-white transition-colors drop-shadow-sm">
+                                    <p className="text-base leading-7 text-zinc-300 group-hover:text-white transition-colors">
                                         {feature.description}
                                     </p>
                                 </div>
