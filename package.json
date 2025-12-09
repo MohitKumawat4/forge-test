@@ -9,6 +9,8 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@react-spring/parallax": "^10.0.3",
+    "@react-spring/web": "^10.0.3",
     "@splinetool/react-spline": "^4.1.0",
     "@splinetool/runtime": "^1.12.5",
     "clsx": "^2.1.1",

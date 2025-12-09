@@ -35,7 +35,7 @@ export function Navbar({ className = "" }: NavbarProps) {
     }, []);
 
     return (
-        <nav className={cn("fixed top-0 left-0 right-0 z-50 flex justify-center pt-6 px-4", className)}>
+        <nav className={cn("fixed top-0 left-0 right-0 z-50 flex justify-center pt-3 px-4", className)}>
             <div className="w-full max-w-7xl relative flex items-center justify-between h-14">
 
                 {/* --- PILL BACKGROUND --- */}

@@ -159,7 +159,7 @@ export function Footer({ className = "" }: FooterProps) {
             <div className="w-full border-t border-white/10">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     <div className="relative w-full overflow-hidden py-12 flex flex-col items-center justify-center">
-                        <h1 className="text-[12vw] leading-none font-bold tracking-tighter text-white whitespace-nowrap select-none font-sans">
+                        <h1 className="text-[11vw] leading-none font-bold tracking-tighter text-white whitespace-nowrap select-none font-sans">
                             Enterprise Forge
                         </h1>
                     </div>
