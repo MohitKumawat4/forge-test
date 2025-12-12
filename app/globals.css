@@ -106,6 +106,16 @@ body {
     line-height: 1.5;
     font-weight: 400;
   }
+
+  /* Utility to hide scrollbar */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
 
 ::selection {

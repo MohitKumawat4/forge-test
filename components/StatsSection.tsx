@@ -25,7 +25,7 @@ export function StatsSection({ className = "" }: StatsSectionProps) {
     const duplicatedStats = [...stats, ...stats];
 
     return (
-        <div className={`bg-white py-8 overflow-hidden ${className}`}>
+        <div className={`bg-white py-8 mb-24 overflow-hidden ${className}`}>
             <div className="relative">
                 {/* Gradient overlays for fade effect on edges */}
                 {/* <div className="absolute left-0 top-0 bottom-0 w-32 bg-linear-to-r from-zinc-950 to-transparent z-10" /> */}

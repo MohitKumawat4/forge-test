@@ -18,7 +18,7 @@ const benefits = [
 
 export function ROISection() {
     return (
-        <section className="relative py-24 bg-linear-to-b from-white to-emerald-50 text-black">
+        <section className="relative py-24 bg-white text-black">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
                 {/* CTA Banner */}
@@ -46,49 +46,11 @@ export function ROISection() {
 
                 {/* ROI Content */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-                    <div>
-                        <p className="text-sm font-bold tracking-widest text-zinc-500 uppercase mb-4">
-                            RETURN ON INVESTMENT
-                        </p>
-                        <h2 className="text-h2-apple text-zinc-900 mb-6">
-                            Maximise your ROI
-                        </h2>
-                        <p className="text-p1-apple text-zinc-600 mb-8">
-                            You'll save time and money with Enterprise Forge. But don't take it from us – take it from our customers. Our AI-driven solutions consistently deliver 301% return on investment over three years by automating workflows and optimizing resource allocation.
-                        </p>
-                        <Link
-                            href="#"
-                            className="text-lg font-semibold leading-6 text-zinc-900 underline decoration-2 underline-offset-4 hover:text-emerald-700 transition-colors"
-                        >
-                            Read the full study
-                        </Link>
-                    </div>
 
-                    <div className="space-y-10">
-                        {benefits.map((benefit, index) => (
-                            <div key={index} className="flex gap-4">
-                                <div className="flex-none">
-                                    <div className="flex h-6 w-6 items-center justify-center rounded-full bg-black text-white">
-                                        <Check className="h-4 w-4" strokeWidth={3} />
-                                    </div>
-                                </div>
-                                <div>
-                                    <h3 className="text-lg font-bold leading-6 text-zinc-900 mb-2">
-                                        {benefit.title}
-                                    </h3>
-                                    <p className="text-base leading-7 text-zinc-600">
-                                        {benefit.description}
-                                    </p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
                 </div>
 
             </div>
 
-            {/* Gradient Blend to Footer */}
-            <div className="absolute bottom-0 left-0 w-full h-32 bg-linear-to-b from-transparent to-black pointer-events-none z-10" />
         </section>
     );
 }
