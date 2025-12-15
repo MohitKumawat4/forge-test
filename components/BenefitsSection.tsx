@@ -57,14 +57,14 @@ export function BenefitsSection({ className = "" }: { className?: string }) {
     return (
         <section className={`py-32 bg-white relative overflow-hidden ${className}`}>
             {/* Background Grid Lines (Stripe-like) */}
-            <div className="absolute inset-0 mx-auto max-w-7xl px-6 lg:px-8 pointer-events-none">
+            <div className="absolute inset-0 mx-auto w-full md:w-[90%] max-w-screen-2xl px-6 md:px-8 pointer-events-none">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 h-full border-l border-r border-dashed border-slate-200/60 mx-auto">
                     <div className="hidden md:block border-r border-dashed border-slate-200/60 h-full" />
                     <div className="hidden md:block border-r border-dashed border-slate-200/60 h-full" />
                 </div>
             </div>
 
-            <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="relative mx-auto w-full md:w-[90%] max-w-screen-2xl px-6 md:px-8">
 
                 {/* Header Section */}
                 <div className="max-w-2xl mb-24 text-left relative z-10">
@@ -80,19 +80,19 @@ export function BenefitsSection({ className = "" }: { className?: string }) {
                     </p>
                 </div>
 
-                {/* Cards Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+                {/* Cards Grid / Horizontal Scroll */}
+                <div className="flex md:grid md:grid-cols-3 flex-nowrap overflow-x-auto md:overflow-visible gap-5 md:gap-8 snap-x snap-mandatory pb-8 -mx-6 px-6 md:mx-0 md:px-0 relative z-10 scrollbar-hide">
                     {benefits.map((benefit, index) => (
                         <motion.div
                             key={index}
                             initial="initial"
                             whileHover="hover"
-                            className="group relative flex flex-col rounded-lg overflow-hidden bg-white shadow-[0_1px_3px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_40px_-5px_rgba(0,0,0,0.1)] transition-shadow duration-300 transform-gpu bg-white"
+                            className="min-w-[85vw] md:min-w-0 snap-center group relative flex flex-col rounded-lg overflow-hidden bg-white shadow-[0_1px_3px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_40px_-5px_rgba(0,0,0,0.1)] transition-shadow duration-300 transform-gpu bg-white"
                         >
                             {/* Graphic Area (Container) */}
                             <motion.div
                                 variants={graphicContainerVariants}
-                                className="w-full bg-[#f6f9fc] flex items-center justify-center overflow-hidden relative border-b border-slate-100"
+                                className="w-full bg-[#f6f9fc] flex items-center justify-center overflow-hidden relative border-b border-slate-100 h-[240px] md:h-auto"
                             >
                                 <motion.div
                                     variants={imageVariants}

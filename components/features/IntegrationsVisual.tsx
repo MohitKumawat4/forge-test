@@ -7,7 +7,7 @@ export function IntegrationsVisual() {
     return (
         <div className="w-full h-full relative p-8 isolate">
             {/* Grid Background - Edge Fade Enabled */}
-            <div className="absolute inset-y-0 -left-64 -right-64 -z-10 mask-[radial-gradient(closest-side,black_40%,transparent_100%)]">
+            <div className="absolute inset-y-0 left-0 right-0 md:-left-48 md:-right-48 -z-10 mask-[radial-gradient(closest-side,black_40%,transparent_100%)]">
                 <div className="absolute inset-0 opacity-[0.08]"
                     style={{
                         backgroundImage: "linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)",
@@ -17,7 +17,7 @@ export function IntegrationsVisual() {
             </div>
 
             {/* Content Container - Shifted Right */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center gap-16 translate-x-[60px]">
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-16">
 
                 {/* Top Row: Environments */}
                 <div className="flex gap-4">

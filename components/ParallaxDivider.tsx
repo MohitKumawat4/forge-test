@@ -337,13 +337,6 @@ export function ParallaxDivider() {
                         maskImage: 'linear-gradient(to top, black, transparent 80%)',
                     }}
                 />
-
-                {/* Horizontal scan line effect */}
-                <motion.div
-                    className="absolute left-0 right-0 h-[2px] bg-linear-to-r from-transparent via-fuchsia-400/50 to-transparent"
-                    animate={{ top: ["0%", "100%"] }}
-                    transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-                />
             </motion.div>
 
             {/* Layer 4 - Foreground elements (moves fastest / opposite direction) */}
@@ -366,17 +359,28 @@ export function ParallaxDivider() {
 
             {/* Layer 5 - Meteor Shower (Realistic Falling Shooting Stars) */}
             <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden">
-                {/* Multiple meteors falling diagonally - positioned in dark sky area (35-65%) */}
-                <FallingMeteor delay={0} duration={2.0} size={1.2} top={35} left={5} />
-                <FallingMeteor delay={4} duration={1.8} size={0.9} top={40} left={20} />
-                <FallingMeteor delay={8} duration={2.2} size={1.0} top={32} left={40} />
-                <FallingMeteor delay={12} duration={1.6} size={1.4} top={45} left={55} />
-                <FallingMeteor delay={16} duration={2.0} size={0.8} top={38} left={70} />
-                <FallingMeteor delay={20} duration={1.9} size={1.1} top={50} left={10} />
-                <FallingMeteor delay={24} duration={2.1} size={0.7} top={42} left={30} />
+                {/* Multiple meteors falling diagonally - covering entire dark area (30-85%) */}
+                {/* Upper section meteors */}
+                <FallingMeteor delay={0} duration={2.0} size={1.2} top={30} left={5} />
+                <FallingMeteor delay={4} duration={1.8} size={0.9} top={35} left={20} />
+                <FallingMeteor delay={8} duration={2.2} size={1.0} top={28} left={40} />
+                <FallingMeteor delay={12} duration={1.6} size={1.4} top={38} left={55} />
+                <FallingMeteor delay={16} duration={2.0} size={0.8} top={32} left={70} />
+                {/* Middle section meteors */}
+                <FallingMeteor delay={20} duration={1.9} size={1.1} top={45} left={10} />
+                <FallingMeteor delay={24} duration={2.1} size={0.7} top={50} left={30} />
                 <FallingMeteor delay={28} duration={1.7} size={1.3} top={48} left={50} />
-                <FallingMeteor delay={32} duration={2.3} size={0.6} top={36} left={75} />
+                <FallingMeteor delay={32} duration={2.3} size={0.6} top={42} left={75} />
                 <FallingMeteor delay={36} duration={1.8} size={1.0} top={55} left={15} />
+                {/* Lower section meteors (Forge the Future area) */}
+                <FallingMeteor delay={40} duration={2.0} size={1.1} top={62} left={8} />
+                <FallingMeteor delay={44} duration={1.9} size={0.8} top={68} left={25} />
+                <FallingMeteor delay={48} duration={2.2} size={1.2} top={65} left={45} />
+                <FallingMeteor delay={52} duration={1.7} size={0.9} top={72} left={60} />
+                <FallingMeteor delay={56} duration={2.1} size={1.0} top={70} left={80} />
+                <FallingMeteor delay={60} duration={1.8} size={1.3} top={78} left={18} />
+                <FallingMeteor delay={64} duration={2.0} size={0.7} top={75} left={38} />
+                <FallingMeteor delay={68} duration={1.6} size={1.1} top={82} left={55} />
             </div>
 
             {/* Extra Empty Spacer Section - Extends the gradient background */}
@@ -396,40 +400,10 @@ export function ParallaxDivider() {
 
             {/* Main content section - Parallax hero area */}
             <div className="relative z-10 min-h-[800px] flex flex-col">
-                {/* Central content with orbital elements */}
-                <div className="flex-1 flex items-center justify-center">
-                    {/* Orbital rings around content */}
-                    <div className="relative w-[400px] h-[400px]">
-                        {/* Outer ring */}
-                        <motion.div
-                            className="absolute inset-0 rounded-full border border-fuchsia-500/20"
-                            style={{ scale: 1.5 }}
-                            animate={{ rotate: 360 }}
-                            transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-                        />
-                        {/* Middle ring with orbital dots */}
-                        <OrbitalElement size={8} orbitSize={350} duration={30} color="#0ea5e9" />
-                        <OrbitalElement size={6} orbitSize={350} duration={30} delay={15} color="#d946ef" />
-
-                        {/* Inner ring */}
-                        <OrbitalElement size={10} orbitSize={250} duration={20} color="#8b5cf6" />
-                        <OrbitalElement size={5} orbitSize={250} duration={20} delay={10} color="#f59e0b" />
-
-                        {/* Center glow */}
-                        <motion.div
-                            className="absolute inset-0 m-auto w-32 h-32"
-                            animate={{ scale: [1, 1.1, 1] }}
-                            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                        >
-                            <div className="w-full h-full rounded-full bg-linear-to-br from-fuchsia-500/20 to-cyan-500/20 blur-xl" />
-                        </motion.div>
-                    </div>
-                </div>
-
                 {/* Main content overlay */}
                 <motion.div
                     style={{ opacity: fadeOut }}
-                    className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 py-32"
+                    className="absolute inset-0 flex flex-col items-center justify-end text-center px-6 pb-15"
                 >
                     <motion.div
                         initial={{ opacity: 0, y: 40 }}
@@ -438,14 +412,6 @@ export function ParallaxDivider() {
                         viewport={{ once: true }}
                         className="space-y-8"
                     >
-                        {/* Decorative line */}
-                        <motion.div
-                            className="w-px h-20 bg-linear-to-b from-transparent via-fuchsia-500 to-transparent mx-auto"
-                            initial={{ scaleY: 0 }}
-                            whileInView={{ scaleY: 1 }}
-                            transition={{ duration: 1.5, delay: 0.2 }}
-                            viewport={{ once: true }}
-                        />
 
                         {/* Heading - Solid white text for better readability */}
                         <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-white">
@@ -478,26 +444,6 @@ export function ParallaxDivider() {
                     </motion.div>
                 </motion.div>
 
-                {/* Additional moving elements */}
-                <div className="absolute bottom-0 left-0 right-0 h-32 overflow-hidden pointer-events-none">
-                    {/* Horizontal moving lines */}
-                    <motion.div
-                        className="absolute bottom-8 left-0 w-full h-px"
-                        style={{
-                            background: 'linear-gradient(90deg, transparent 0%, #d946ef 50%, transparent 100%)',
-                        }}
-                        animate={{ x: ["-100%", "100%"] }}
-                        transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-                    />
-                    <motion.div
-                        className="absolute bottom-16 left-0 w-full h-px opacity-50"
-                        style={{
-                            background: 'linear-gradient(90deg, transparent 0%, #0ea5e9 50%, transparent 100%)',
-                        }}
-                        animate={{ x: ["100%", "-100%"] }}
-                        transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
-                    />
-                </div>
             </div>
 
             {/* Footer Section - Seamlessly integrated with the green background */}

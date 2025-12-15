@@ -49,7 +49,7 @@ export function Footer({ className = "" }: FooterProps) {
                 Footer
             </h2>
 
-            <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+            <div className="mx-auto w-full md:w-[90%] max-w-screen-2xl px-6 py-16 lg:px-8">
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-16">
                     {/* Brand / Social Col */}
                     <div className="col-span-2 md:col-span-1 lg:col-span-1">
@@ -125,7 +125,7 @@ export function Footer({ className = "" }: FooterProps) {
 
             {/* Bottom Section: Huge Text & Legal */}
             <div className="w-full border-t border-white/10">
-                <div className="mx-auto max-w-7xl px-6 lg:px-8">
+                <div className="mx-auto w-full md:w-[90%] max-w-screen-2xl px-6 lg:px-8">
                     <div className="relative w-full overflow-hidden py-12 lg:py-16 flex flex-col items-center justify-center">
                         <h1 className="text-[10vw] leading-none font-bold tracking-tighter text-white whitespace-nowrap select-none font-sans opacity-90">
                             Enterprise Forge

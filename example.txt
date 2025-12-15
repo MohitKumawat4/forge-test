@@ -57,3 +57,14 @@
             create the most beautiful minimalist aesthetic mindblowing ui for the home page.
              Also design the headings,text, buttons etc. 
              I will keep the robot 3d model but work with that and design the best ui ever created in history.
+
+
+            
+
+
+
+no this not the slot machine animation i want the entire test goes up and a new text comes from down and takes 
+its place but the new text is the same as previous one and this happens on hover while this happning the hover 
+slider comes in smoothly from its last position with ease in and out also apply it on nav links and make it slow and smooth
+
+            <div className="hidden lg:block absolute top-0 right-0 w-1/2 h-full z-0">

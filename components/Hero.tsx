@@ -5,17 +5,19 @@ import { motion, AnimatePresence } from "framer-motion";
 import Spline from "@splinetool/react-spline";
 // import { LeftArrow, RightArrow } from "./HandDrawnArrow";
 import { AnnouncementCard } from "./AnnouncementCard";
+import { HeroIntegrations } from "./HeroIntegrations";
+import { StatsSection } from "./StatsSection";
 
 interface HeroProps {
     className?: string;
 }
 
 const words = [
-    "AI-Powered Enterprise Apps",
+    "AI Enterprise Apps",
     "Autonomous AI Workflows",
     "Enterprise AI Solutions",
     "Intelligent AI Agents",
-    "AI-Optimized Internal Tools"
+    "AI Internal Tools"
 ];
 
 export function Hero({ className = "" }: HeroProps) {
@@ -30,7 +32,7 @@ export function Hero({ className = "" }: HeroProps) {
 
     return (
         <div
-            className={`relative flex min-h-screen flex-col justify-start overflow-hidden pt-48 ${className}`}
+            className={`relative flex min-h-[85vh] md:min-h-screen flex-col justify-start overflow-hidden pt-20 md:pt-9 pb-10 md:pb-0 ${className}`}
             style={{
                 // background: 'radial-gradient(circle at 20% 20%, #f8f8ff 0%, #e0e8ff 25%, #cce0ff 60%, #b8c8e0 100%)'
             }}
@@ -58,7 +60,7 @@ export function Hero({ className = "" }: HeroProps) {
             </div> */}
 
             {/* Content */}
-            <div className="relative z-50 mx-auto max-w-7xl px-6 lg:px-8 w-full pointer-events-none">
+            <div className="relative z-50 mx-auto w-full md:w-[90%] max-w-screen-2xl px-6 md:px-8 w-full pointer-events-none">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                     <div className="flex flex-col items-center text-center lg:items-start lg:text-left pt-12 lg:pt-0 pointer-events-auto -mt-10 lg:-mt-15 relative z-10">
                         {/* Announcement Card */}
@@ -132,16 +134,26 @@ export function Hero({ className = "" }: HeroProps) {
                         </div>
                     </div>
 
-                    {/* Empty column for the robot mascot */}
-                    <div className="hidden lg:block" />
+                    {/* Integrations Visuals (Right Side) */}
+                    <div className="hidden lg:block relative h-full w-full min-h-[500px]">
+                        <HeroIntegrations />
+                    </div>
                 </div>
             </div>
 
             {/* Background Elements for Mobile - To reduce "Bad Design" feel */}
             <div className="lg:hidden absolute inset-0 z-0 pointer-events-none">
-                <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:40px_40px]" />
+                <div
+                    style={{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px)' }}
+                    className="absolute inset-0 bg-size-[40px_40px] [mask-image:linear-gradient(to_bottom,white_30%,transparent_90%)] z-0 pointer-events-none"
+                />
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-100/30 rounded-full blur-3xl animate-pulse" />
             </div>
+
+            {/* Stats Section anchored to bottom */}
+            <StatsSection className="mt-auto relative z-20 border-t border-slate-100/50 mb-0" />
+
+
         </div>
     );
 }

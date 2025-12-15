@@ -19,7 +19,7 @@ const benefits = [
 export function ROISection() {
     return (
         <section className="relative py-24 bg-white text-black">
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="mx-auto w-full md:w-[90%] max-w-screen-2xl px-6 md:px-8">
 
                 {/* CTA Banner */}
                 <div className="relative overflow-hidden rounded-[2.5rem] bg-[#78ccdd] px-6 py-16 shadow-2xl sm:px-16 md:pt-20 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0 mb-24">

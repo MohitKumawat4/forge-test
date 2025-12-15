@@ -33,6 +33,11 @@ export function Preloader() {
                 duration: 0.8,
                 ease: "power4.inOut",
                 delay: 0.2,
+                onComplete: () => {
+                    if (containerRef.current) {
+                        containerRef.current.style.display = "none";
+                    }
+                }
             });
 
         // Cleanup function

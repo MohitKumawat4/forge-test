@@ -22,7 +22,7 @@ export function PortalsVisual() {
     return (
         <div className="w-full h-full relative p-4 isolate">
             {/* Grid Background */}
-            <div className="absolute inset-y-0 -left-64 -right-64 -z-10 mask-[radial-gradient(closest-side,black_40%,transparent_100%)]">
+            <div className="absolute inset-y-0 left-0 right-0 md:-left-48 md:-right-48 -z-10 mask-[radial-gradient(closest-side,black_40%,transparent_100%)]">
                 <div className="absolute inset-0 opacity-[0.08]"
                     style={{
                         backgroundImage: "linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)",
@@ -31,7 +31,7 @@ export function PortalsVisual() {
                 />
             </div>
 
-            <div className="absolute inset-0 flex items-center justify-center translate-x-[60px]">
+            <div className="absolute inset-0 flex items-center justify-center">
                 <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}

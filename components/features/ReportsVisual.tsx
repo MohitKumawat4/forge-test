@@ -95,7 +95,7 @@ export function ReportsVisual() {
     return (
         <div className="w-full h-full relative p-4 isolate overflow-visible">
             {/* Grid Background - Extended with radial fade */}
-            <div className="absolute inset-y-0 -left-64 -right-64 -z-10 mask-[radial-gradient(closest-side,black_40%,transparent_100%)]">
+            <div className="absolute inset-y-0 left-0 right-0 md:-left-48 md:-right-48 -z-10 mask-[radial-gradient(closest-side,black_40%,transparent_100%)]">
                 <div className="absolute inset-0 opacity-[0.08]"
                     style={{
                         backgroundImage: "linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)",
@@ -105,7 +105,7 @@ export function ReportsVisual() {
             </div>
 
             {/* Content Container - Spread elements on grid */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center translate-x-[60px] gap-4 overflow-visible">
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 overflow-visible">
 
                 {/* Main Report Card - 3D Floating Effect with subtle breathing animation */}
                 <motion.div

@@ -398,10 +398,10 @@ export function Features({ className = "" }: { className?: string }) {
     const progressPercentage = activeIndex === 0 ? 0 : (activeIndex / (tabs.length - 1)) * 100;
 
     return (
-        <section className={`bg-white relative pt-16 pb-32 ${className}`}>
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <section className={`bg-white relative pt-16 pb-10 md:pb-32 ${className}`}>
+            <div className="mx-auto w-full md:w-[90%] max-w-screen-2xl px-6 md:px-8">
                 {/* Main Content Grid */}
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start relative lg:-ml-[60px]">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start relative">
 
                     {/* Left: Scrollable Content (Restricted to < 45% width) */}
                     <div className="lg:col-span-5 flex flex-col gap-24 pb-32">
@@ -411,50 +411,232 @@ export function Features({ className = "" }: { className?: string }) {
                                 id={`feature-card-${tab.id}`}
                                 data-tab-id={tab.id}
                                 ref={(el: HTMLDivElement | null) => { cardRefs.current[index] = el; }}
-                                className="scroll-mt-[25vh] min-h-[500px] flex items-center"
+                                className="scroll-mt-[25vh] min-h-fit lg:min-h-[85vh] flex flex-col pb-16 lg:pb-0"
                             >
                                 <motion.div
-                                    className="bg-white rounded-none p-0 w-full"
+                                    className="bg-white rounded-none p-0 w-full h-full flex flex-col"
                                     initial={{ opacity: 0, y: 30 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true, margin: "-100px" }}
                                     transition={{ duration: 0.6 }}
                                 >
-                                    <h2 className="text-2xl font-medium text-zinc-900 mb-4 leading-tight whitespace-pre-line">
-                                        {tab.title}
-                                    </h2>
-                                    <p className="text-lg text-zinc-500 mb-8 leading-relaxed max-w-lg">
-                                        {tab.description}
-                                    </p>
+                                    {/* Top Section - Title and Description */}
+                                    <div>
+                                        {/* Mobile Tab Label - Visible only on smaller screens */}
+                                        <div className="lg:hidden flex items-center gap-2 mb-4">
+                                            <span className="w-2 h-2 rounded-full bg-zinc-900" />
+                                            <span className="text-sm font-medium text-zinc-900 tracking-wide">
+                                                {tab.label}
+                                            </span>
+                                        </div>
 
-                                    {/* Mobile Visual Component */}
-                                    <div className="block lg:hidden w-full h-56 my-6 rounded-xl border border-zinc-200 bg-zinc-50 overflow-hidden relative group">
-                                        <div className="absolute inset-0 flex items-center justify-center p-0 overflow-hidden">
-                                            <div className="transform scale-[0.55] origin-center w-full flex items-center justify-center">
-                                                {tab.id === 'workflows' && <WorkflowVisual />}
-                                                {tab.id === 'integrations' && <IntegrationsVisual />}
-                                                {tab.id === 'apps' && <AppsVisual />}
-                                                {tab.id === 'forms' && <FormsVisual />}
-                                                {tab.id === 'reports' && <ReportsVisual />}
-                                                {tab.id === 'portals' && <PortalsVisual />}
-                                                {tab.id === 'boards' && <BoardsVisual />}
+                                        <h2 className="text-2xl font-medium text-zinc-900 mb-4 leading-tight whitespace-pre-line">
+                                            {tab.title}
+                                        </h2>
+                                        <p className="text-xl text-zinc-500 leading-relaxed max-w-lg">
+                                            {tab.description}
+                                        </p>
+                                    </div>
+
+
+                                    {/* Mobile Visual Component - Only on mobile */}
+                                    {/* Mobile Visual Component - Only on mobile centered to viewport */}
+                                    <div className="block lg:hidden h-[400px] my-0 relative overflow-visible">
+                                        {/* Background Grid - Merges with page background */}
+                                        <div className="absolute inset-x-0 inset-y-0"
+                                            style={{
+                                                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px)`,
+                                                backgroundSize: '24px 24px',
+                                                maskImage: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)'
+                                            }}
+                                        />
+
+                                        <div className="absolute inset-0 flex items-center justify-center overflow-visible">
+                                            <div className="transform scale-[0.6] origin-center w-full flex items-center justify-center -mt-8">
+                                                {tab.id === 'workflows' && (
+                                                    <motion.div
+                                                        initial={{ opacity: 0, scale: 0.9 }}
+                                                        whileInView={{ opacity: 1, scale: 1 }}
+                                                        viewport={{ once: true, margin: "-50px" }}
+                                                        transition={{ duration: 0.6, ease: "easeOut" }}
+                                                        className="w-[400px] flex items-center justify-center"
+                                                    >
+                                                        <WorkflowVisual />
+                                                    </motion.div>
+                                                )}
+                                                {tab.id === 'integrations' && (
+                                                    <motion.div
+                                                        initial={{ opacity: 0, scale: 0.9 }}
+                                                        whileInView={{ opacity: 1, scale: 1 }}
+                                                        viewport={{ once: true, margin: "-50px" }}
+                                                        transition={{ duration: 0.6, ease: "easeOut" }}
+                                                        className="w-[400px] flex items-center justify-center"
+                                                    >
+                                                        <IntegrationsVisual />
+                                                    </motion.div>
+                                                )}
+                                                {tab.id === 'apps' && (
+                                                    <motion.div
+                                                        initial={{ opacity: 0, scale: 0.9 }}
+                                                        whileInView={{ opacity: 1, scale: 1 }}
+                                                        viewport={{ once: true, margin: "-50px" }}
+                                                        transition={{ duration: 0.6, ease: "easeOut" }}
+                                                        className="w-[400px] flex items-center justify-center"
+                                                    >
+                                                        <AppsVisual />
+                                                    </motion.div>
+                                                )}
+                                                {tab.id === 'forms' && (
+                                                    <div className="w-[400px] h-[500px] relative">
+                                                        {/* Forms animation structure (already implemented) */}
+                                                        <svg
+                                                            className="absolute inset-0 w-full h-full pointer-events-none"
+                                                            viewBox="0 0 400 500"
+                                                            fill="none"
+                                                            style={{ overflow: 'visible' }}
+                                                        >
+                                                            <defs>
+                                                                <linearGradient id="green-gradient-forms-mobile" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                                    <stop offset="0%" stopColor="#064e3b" />
+                                                                    <stop offset="25%" stopColor="#047857" />
+                                                                    <stop offset="50%" stopColor="#10b981" />
+                                                                    <stop offset="75%" stopColor="#34d399" />
+                                                                    <stop offset="100%" stopColor="#6ee7b7" />
+                                                                </linearGradient>
+                                                                <linearGradient id="green-animated-forms-mobile" x1="0%" y1="0%" x2="100%" y2="0%">
+                                                                    <stop offset="0%" stopColor="#064e3b">
+                                                                        <animate attributeName="stop-color" values="#064e3b;#047857;#10b981;#34d399;#6ee7b7;#34d399;#10b981;#047857;#064e3b" dur="4s" repeatCount="indefinite" />
+                                                                    </stop>
+                                                                    <stop offset="50%" stopColor="#10b981">
+                                                                        <animate attributeName="stop-color" values="#10b981;#34d399;#10b981;#047857;#064e3b;#047857;#10b981" dur="4s" repeatCount="indefinite" />
+                                                                    </stop>
+                                                                    <stop offset="100%" stopColor="#6ee7b7">
+                                                                        <animate attributeName="stop-color" values="#6ee7b7;#34d399;#10b981;#047857;#064e3b;#047857;#10b981;#34d399;#6ee7b7" dur="4s" repeatCount="indefinite" />
+                                                                    </stop>
+                                                                </linearGradient>
+                                                            </defs>
+
+                                                            <motion.rect
+                                                                x="4"
+                                                                y="4"
+                                                                width="392"
+                                                                height="492"
+                                                                rx="16"
+                                                                stroke="url(#green-gradient-forms-mobile)"
+                                                                strokeWidth="1.5"
+                                                                fill="none"
+                                                                strokeOpacity="0.2"
+                                                                initial={{ pathLength: 0, opacity: 0 }}
+                                                                whileInView={{ pathLength: 1, opacity: 1 }}
+                                                                viewport={{ once: true, margin: "-50px" }}
+                                                                transition={{ duration: 2, ease: [0.22, 1, 0.36, 1] }}
+                                                            />
+
+                                                            <motion.rect
+                                                                x="4"
+                                                                y="4"
+                                                                width="392"
+                                                                height="492"
+                                                                rx="16"
+                                                                stroke="url(#green-animated-forms-mobile)"
+                                                                strokeWidth="2.5"
+                                                                fill="none"
+                                                                strokeLinecap="round"
+                                                                initial={{ pathLength: 0, opacity: 0 }}
+                                                                whileInView={{ pathLength: 1, opacity: 1 }}
+                                                                viewport={{ once: true, margin: "-50px" }}
+                                                                transition={{
+                                                                    pathLength: { duration: 2.5, ease: [0.22, 1, 0.36, 1] },
+                                                                    opacity: { duration: 0.5, ease: "easeOut" }
+                                                                }}
+                                                            />
+
+                                                            <motion.rect
+                                                                x="4"
+                                                                y="4"
+                                                                width="392"
+                                                                height="492"
+                                                                rx="16"
+                                                                stroke="url(#green-animated-forms-mobile)"
+                                                                strokeWidth="8"
+                                                                fill="none"
+                                                                strokeLinecap="round"
+                                                                filter="blur(6px)"
+                                                                initial={{ pathLength: 0, opacity: 0 }}
+                                                                whileInView={{ pathLength: 1, opacity: 0.4 }}
+                                                                viewport={{ once: true, margin: "-50px" }}
+                                                                transition={{
+                                                                    pathLength: { duration: 2.5, ease: [0.22, 1, 0.36, 1] },
+                                                                    opacity: { duration: 0.8, ease: "easeOut" }
+                                                                }}
+                                                            />
+                                                        </svg>
+
+                                                        <motion.div
+                                                            initial={{ scale: 0.96, opacity: 0 }}
+                                                            whileInView={{ scale: 1, opacity: 1 }}
+                                                            viewport={{ once: true, margin: "-50px" }}
+                                                            transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                                                            className="w-full h-full perspective-[2000px]"
+                                                        >
+                                                            <Feature3DCard
+                                                                activeTab={tab}
+                                                                activeIndex={index}
+                                                                indexToEmoji={indexToEmoji}
+                                                            />
+                                                        </motion.div>
+                                                    </div>
+                                                )}
+                                                {tab.id === 'reports' && (
+                                                    <motion.div
+                                                        initial={{ opacity: 0, scale: 0.9 }}
+                                                        whileInView={{ opacity: 1, scale: 1 }}
+                                                        viewport={{ once: true, margin: "-50px" }}
+                                                        transition={{ duration: 0.6, ease: "easeOut" }}
+                                                        className="w-[400px] flex items-center justify-center"
+                                                    >
+                                                        <ReportsVisual />
+                                                    </motion.div>
+                                                )}
+                                                {tab.id === 'portals' && (
+                                                    <motion.div
+                                                        initial={{ opacity: 0, scale: 0.9 }}
+                                                        whileInView={{ opacity: 1, scale: 1 }}
+                                                        viewport={{ once: true, margin: "-50px" }}
+                                                        transition={{ duration: 0.6, ease: "easeOut" }}
+                                                        className="w-[400px] flex items-center justify-center"
+                                                    >
+                                                        <PortalsVisual />
+                                                    </motion.div>
+                                                )}
+                                                {tab.id === 'boards' && (
+                                                    <motion.div
+                                                        initial={{ opacity: 0, scale: 0.9 }}
+                                                        whileInView={{ opacity: 1, scale: 1 }}
+                                                        viewport={{ once: true, margin: "-50px" }}
+                                                        transition={{ duration: 0.6, ease: "easeOut" }}
+                                                        className="w-[400px] flex items-center justify-center"
+                                                    >
+                                                        <BoardsVisual />
+                                                    </motion.div>
+                                                )}
                                             </div>
                                         </div>
                                     </div>
 
+                                    {/* Spacer - Empty space between header and checklist (Desktop Only) */}
+                                    <div className="hidden lg:block grow min-h-[200px] lg:min-h-[280px]" />
+
+                                    {/* Bottom Section - Checklist Points */}
                                     <div className="border-t border-zinc-200">
                                         {tab.checklist.slice(0, 3).map((item, i) => (
-                                            <div key={i} className="py-3 border-b border-zinc-200 flex items-start gap-6">
-                                                <span className="text-zinc-400 font-mono text-sm pt-1">
+                                            <div key={i} className="py-4 border-b border-zinc-200 flex items-start gap-6">
+                                                <span className="text-zinc-400 font-mono text-sm pt-0.5 min-w-[20px]">
                                                     {i + 1}
                                                 </span>
-                                                <div className="flex flex-col gap-1">
-                                                    <h4 className={`text-base font-medium transition-colors duration-300 ${i === 1 ? "text-zinc-500" : "text-zinc-500"
-                                                        }`}>
-                                                        {item.text}
-                                                    </h4>
-
-                                                </div>
+                                                <h4 className="text-base font-medium text-zinc-500">
+                                                    {item.text}
+                                                </h4>
                                             </div>
                                         ))}
                                     </div>
@@ -476,7 +658,7 @@ export function Features({ className = "" }: { className?: string }) {
                                     className="w-full h-full relative flex items-center justify-center isolate"
                                 >
                                     {/* Grid Background */}
-                                    <div className="absolute inset-y-0 -left-64 -right-64 -z-10 mask-[radial-gradient(closest-side,black_40%,transparent_100%)]">
+                                    <div className="absolute inset-y-0 left-0 right-0 md:-left-48 md:-right-48 -z-10 mask-[radial-gradient(closest-side,black_40%,transparent_100%)]">
                                         <div className="absolute inset-0 opacity-[0.08]"
                                             style={{
                                                 backgroundImage: "linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)",
