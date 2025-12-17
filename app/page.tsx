@@ -3,6 +3,9 @@ import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { StatsSection } from "@/components/StatsSection";
 import { Features } from "@/components/Features";
+import { ProcessStages } from "@/components/ProcessStages";
+import { SecuritySection } from "@/components/SecuritySection";
+import { AICapabilitiesSection } from "@/components/AICapabilitiesSection";
 import { ParallaxPromo } from "@/components/ParallaxPromo";
 import { GlobalMapSection } from "@/components/GlobalMapSection";
 import { UseCases } from "@/components/IndustryExpertise";
@@ -21,6 +24,9 @@ export default function Home() {
 
         <ParallaxPromo />
         <Features />
+        <ProcessStages />
+        <SecuritySection />
+        <AICapabilitiesSection />
         {/* <GlobalMapSection /> */}
         {/* <UseCases /> */}
         <BenefitsSection />

@@ -56,7 +56,7 @@ export function CompanyMetrics() {
                         <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight break-words">
                             Unprecedented Achievement Metrics
                         </h2>
-                        <p className="text-slate-300 text-base md:text-lg leading-relaxed mb-10">
+                        <p className="text-slate-300 text-base md:text-lg leading-[25px] lg:leading-7 mb-10">
                             Our revolutionary approach isn't just theoretical—it's delivering measurable results across every dimension of enterprise software deployment.
                         </p>
                     </AnimateOnView>

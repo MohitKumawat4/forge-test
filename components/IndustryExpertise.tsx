@@ -106,7 +106,7 @@ export function UseCases({ className = "" }: UseCasesProps) {
                                 <p className="mt-2 text-h2-apple text-zinc-900">
                                     Transform Every Department
                                 </p>
-                                <p className="mt-6 text-p1-apple text-zinc-800">
+                                <p className="mt-6 text-p1-apple text-zinc-800 leading-[25px] lg:leading-7">
                                     Our AI platform adapts to your business needs, whether you're in e-commerce, SaaS, finance, or any other industry.
                                 </p>
                             </div>
@@ -133,7 +133,7 @@ export function UseCases({ className = "" }: UseCasesProps) {
                                                 <h3 className="text-xl font-bold leading-7 text-zinc-900 mb-2">
                                                     {useCases[activeIndex].name}
                                                 </h3>
-                                                <p className="text-body-apple text-zinc-900">
+                                                <p className="text-body-apple text-zinc-900 leading-[25px] lg:leading-7">
                                                     {useCases[activeIndex].description}
                                                 </p>
                                                 <div className={`mt-4 flex items-center ${useCases[activeIndex].textColor} text-sm font-bold cursor-pointer hover:opacity-80 transition-opacity`}>

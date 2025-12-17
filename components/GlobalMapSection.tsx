@@ -98,7 +98,7 @@ export function GlobalMapSection({ className = "" }: GlobalMapSectionProps) {
                     <h2 className="text-h2-apple text-white drop-shadow-lg">
                         Serving Enterprises from 30+ Countries
                     </h2>
-                    <p className="mt-6 text-p1-apple text-zinc-300">
+                    <p className="mt-6 text-p1-apple text-zinc-300 leading-[25px] lg:leading-7">
                         Our AI-powered platform is trusted by businesses worldwide, delivering intelligent automation across continents.
                     </p>
                 </motion.div>

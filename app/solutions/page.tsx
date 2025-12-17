@@ -3,7 +3,7 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { motion } from "framer-motion";
-import { ArrowRight, Users, Heart, Box, Calculator, GitMerge, Zap, TrendingUp, Smartphone, Shield, Bot, Crosshair, BarChart, Globe, Star } from "lucide-react";
+import { ArrowRight, Users, Heart, Box, Calculator, Zap, TrendingUp, Smartphone, Shield, Bot, Crosshair, BarChart, Globe, Star, DollarSign, FolderKanban, Sparkles, GitMerge } from "lucide-react";
 
 const solutions = [
     {
@@ -226,36 +226,183 @@ export default function Solutions() {
             <Navbar />
 
             {/* Hero Section */}
-            <section className="pt-32 pb-20 px-6 md:px-8 w-full md:w-[90%] max-w-screen-2xl mx-auto">
-                <div className="max-w-3xl">
-                    <motion.h1
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="text-5xl md:text-6xl font-bold tracking-tight text-slate-900 mb-6"
-                    >
-                        Solutions for the <span className="text-blue-600">Modern Enterprise</span>
-                    </motion.h1>
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.1 }}
-                        className="text-xl text-slate-600 leading-relaxed"
-                    >
-                        Scale your operations with our suite of AI-powered tools designed for reliability, security, and performance.
-                    </motion.p>
+            <section className="relative bg-white overflow-hidden min-h-screen flex items-center pt-20">
+                <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] bg-size-[16px_16px] mask-[radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
+
+                <div className="w-full md:w-[90%] max-w-screen-2xl mx-auto px-6 md:px-8 relative z-10">
+                    <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6 }}
+                            className="text-center lg:text-left"
+                        >
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-sm font-bold mb-6 border border-blue-100">
+                                <span className="relative flex h-2 w-2">
+                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                                    <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                                </span>
+                                Enterprise Ready
+                            </div>
+                            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-slate-900 tracking-tight mb-6">
+                                Intelligent Solutions for <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-violet-600">Every Department</span>.
+                            </h1>
+                            <p className="text-lg md:text-xl text-slate-500 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                                Empower your teams with AI-driven tools designed to automate workflows, enhance decision-making, and drive growth.
+                            </p>
+                            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                                <button className="w-full sm:w-auto px-8 py-4 rounded-full bg-slate-900 text-white font-bold text-lg hover:bg-slate-800 transition-all flex items-center justify-center gap-2 shadow-lg shadow-slate-900/20 hover:scale-105">
+                                    Explore Solutions <ArrowRight size={20} />
+                                </button>
+                                <button className="w-full sm:w-auto px-8 py-4 rounded-full bg-white border border-slate-200 text-slate-600 font-bold text-lg hover:bg-slate-50 transition-all hover:border-slate-300">
+                                    Book Demo
+                                </button>
+                            </div>
+                        </motion.div>
+
+                        <div className="relative h-[400px] lg:h-[600px] w-full hidden lg:block">
+                            {[
+                                { icon: Users, color: "bg-purple-100 text-purple-600", label: "HR Tech", x: 0, y: 0 },
+                                { icon: Heart, color: "bg-orange-100 text-orange-600", label: "CRM", x: 120, y: -80 },
+                                { icon: Box, color: "bg-green-100 text-green-600", label: "Inventory", x: -100, y: 100 },
+                                { icon: Calculator, color: "bg-blue-100 text-blue-600", label: "Finance", x: 140, y: 120 },
+                                { icon: Zap, color: "bg-amber-100 text-amber-600", label: "Automation", x: -50, y: -120 },
+                            ].map((item, i) => (
+                                <motion.div
+                                    key={i}
+                                    initial={{ opacity: 0, scale: 0 }}
+                                    animate={{ opacity: 1, scale: 1, x: item.x, y: item.y }}
+                                    transition={{ duration: 0.5, delay: 0.2 + i * 0.1 }}
+                                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                                >
+                                    <motion.div
+                                        animate={{ y: [0, -10, 0] }}
+                                        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: i * 0.5 }}
+                                        className="p-4 rounded-2xl bg-white shadow-xl border border-slate-100 flex items-center gap-3 w-48"
+                                    >
+                                        <div className={`p-2 rounded-lg ${item.color}`}>
+                                            <item.icon size={20} />
+                                        </div>
+                                        <div>
+                                            <div className="font-bold text-slate-900">{item.label}</div>
+                                            <div className="text-xs text-slate-500">AI Powered</div>
+                                        </div>
+                                    </motion.div>
+                                </motion.div>
+                            ))}
+
+                            {/* Central Connector Line/Circle */}
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 0.8, delay: 0.8 }}
+                                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full bg-slate-900 flex items-center justify-center shadow-2xl z-10"
+                            >
+                                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                                </svg>
+                            </motion.div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Core Modules Section */}
+            <section className="py-24 bg-slate-50 border-y border-slate-200">
+                <div className="w-full md:w-[90%] max-w-screen-2xl mx-auto px-6 md:px-8">
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl md:text-5xl font-bold text-slate-900 tracking-tight mb-4">
+                            Everything Your Business Needs.<br />
+                            <span className="text-slate-400">Nothing It Doesn't.</span>
+                        </h2>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {[
+                            {
+                                title: "HRMS",
+                                desc: "Recruitment, onboarding, performance management, employee records",
+                                icon: Users,
+                                color: "text-rose-500 bg-rose-50"
+                            },
+                            {
+                                title: "CRM",
+                                desc: "Lead tracking, customer relationships, sales pipeline, communication logs",
+                                icon: Heart,
+                                color: "text-blue-500 bg-blue-50"
+                            },
+                            {
+                                title: "Accounting",
+                                desc: "General ledger, accounts payable/receivable, financial reporting",
+                                icon: Calculator,
+                                color: "text-emerald-500 bg-emerald-50"
+                            },
+                            {
+                                title: "Payroll",
+                                desc: "Salary processing, tax calculations, compliance, direct deposit",
+                                icon: DollarSign,
+                                color: "text-amber-500 bg-amber-50"
+                            },
+                            {
+                                title: "Inventory Management",
+                                desc: "Stock tracking, warehouse management, supply chain",
+                                icon: Box,
+                                color: "text-cyan-500 bg-cyan-50"
+                            },
+                            {
+                                title: "Project Management",
+                                desc: "Task tracking, resource allocation, timeline management",
+                                icon: FolderKanban,
+                                color: "text-violet-500 bg-violet-50"
+                            },
+                            {
+                                title: "Analytics & Reporting",
+                                desc: "Custom dashboards, KPI tracking, business intelligence",
+                                icon: BarChart,
+                                color: "text-orange-500 bg-orange-50"
+                            },
+                            {
+                                title: "Custom Tools",
+                                desc: "AI generates any specialized tool your business requires",
+                                icon: Sparkles,
+                                color: "text-indigo-500 bg-indigo-50"
+                            }
+                        ].map((item, i) => (
+                            <motion.div
+                                key={i}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.1 }}
+                                className="group p-6 bg-white rounded-2xl border border-slate-200 hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300"
+                            >
+                                <div className={`w-12 h-12 rounded-xl ${item.color} flex items-center justify-center mb-4 transition-transform group-hover:scale-110`}>
+                                    <item.icon size={24} />
+                                </div>
+                                <h3 className="text-lg font-bold text-slate-900 mb-3">{item.title}</h3>
+                                <p className="text-sm text-slate-500 leading-relaxed font-medium">
+                                    {item.desc}
+                                </p>
+                            </motion.div>
+                        ))}
+                    </div>
                 </div>
             </section>
 
             {/* Solutions Grid */}
-            <section className="px-6 md:px-8 pb-32 w-full md:w-[90%] max-w-screen-2xl mx-auto">
+            <section className="px-6 md:px-8 py-32 w-full md:w-[90%] max-w-screen-2xl mx-auto">
+                <div className="mb-12">
+                    <h2 className="text-3xl font-bold text-slate-900">Detailed Capabilities</h2>
+                    <p className="text-slate-500 mt-2">Explore our full suite of specialized engines</p>
+                </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {solutions.map((solution, index) => (
                         <motion.div
                             key={index}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
+                            viewport={{ once: true, margin: "-50px" }}
+                            transition={{ delay: (index % 3) * 0.1, duration: 0.5 }}
                             whileHover={{ y: -5 }}
                             className="group p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 bg-white flex flex-col h-full"
                         >

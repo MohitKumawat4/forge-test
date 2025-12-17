@@ -398,13 +398,13 @@ export function Features({ className = "" }: { className?: string }) {
     const progressPercentage = activeIndex === 0 ? 0 : (activeIndex / (tabs.length - 1)) * 100;
 
     return (
-        <section className={`bg-white relative pt-16 pb-10 md:pb-32 ${className}`}>
+        <section className={`bg-white relative pt-1 pb-1 md:pb-2 ${className}`}>
             <div className="mx-auto w-full md:w-[90%] max-w-screen-2xl px-6 md:px-8">
                 {/* Main Content Grid */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start relative">
 
-                    {/* Left: Scrollable Content (Restricted to < 45% width) */}
-                    <div className="lg:col-span-5 flex flex-col gap-24 pb-32">
+                    {/* Left: Scrollable Content (gap-12 for mobile, gap-10 for desktop) -M -W */}
+                    <div className="lg:col-span-5 flex flex-col  lg:gap-10 pb-32">
                         {tabs.map((tab, index) => (
                             <div
                                 key={tab.id}
@@ -422,7 +422,7 @@ export function Features({ className = "" }: { className?: string }) {
                                 >
                                     {/* Top Section - Title and Description */}
                                     <div>
-                                        {/* Mobile Tab Label - Visible only on smaller screens */}
+                                        {/* Mobile Tab Label - Visible only on mobile -M */}
                                         <div className="lg:hidden flex items-center gap-2 mb-4">
                                             <span className="w-2 h-2 rounded-full bg-zinc-900" />
                                             <span className="text-sm font-medium text-zinc-900 tracking-wide">
@@ -433,14 +433,13 @@ export function Features({ className = "" }: { className?: string }) {
                                         <h2 className="text-2xl font-medium text-zinc-900 mb-4 leading-tight whitespace-pre-line">
                                             {tab.title}
                                         </h2>
-                                        <p className="text-xl text-zinc-500 leading-relaxed max-w-lg">
+                                        <p className="text-xl text-zinc-500 leading-[25px] lg:leading-7 max-w-lg">
                                             {tab.description}
                                         </p>
                                     </div>
 
 
-                                    {/* Mobile Visual Component - Only on mobile */}
-                                    {/* Mobile Visual Component - Only on mobile centered to viewport */}
+                                    {/* Mobile Visual Component Container -M */}
                                     <div className="block lg:hidden h-[400px] my-0 relative overflow-visible">
                                         {/* Background Grid - Merges with page background */}
                                         <div className="absolute inset-x-0 inset-y-0"
@@ -624,7 +623,7 @@ export function Features({ className = "" }: { className?: string }) {
                                         </div>
                                     </div>
 
-                                    {/* Spacer - Empty space between header and checklist (Desktop Only) */}
+                                    {/* Spacer - Desktop only spacing between header and checklist -W */}
                                     <div className="hidden lg:block grow min-h-[200px] lg:min-h-[280px]" />
 
                                     {/* Bottom Section - Checklist Points */}
@@ -645,7 +644,7 @@ export function Features({ className = "" }: { className?: string }) {
                         ))}
                     </div>
 
-                    {/* Middle: 3D Visual Element */}
+                    {/* Middle: 3D Visual Element - Desktop/Window view only -W */}
                     <div className="hidden lg:flex lg:col-span-4 sticky top-[10vh] h-[80vh] items-center justify-center perspective-[2000px] z-10 px-4">
                         <AnimatePresence mode="wait">
                             {activeTabId === 'forms' && (
@@ -895,7 +894,7 @@ export function Features({ className = "" }: { className?: string }) {
                     </div>
 
                     {/* Right: Sticky Sidebar Navigation */}
-                    <div className="hidden lg:flex lg:col-span-3 sticky top-[120px] h-fit flex-col items-end translate-x-[50px]">
+                    <div className="hidden lg:flex lg:col-span-3 sticky top-[120px] h-fit flex-col items-end  translate-x-[5px]">
                         {tabs.map((tab, index) => {
                             const isActive = index === activeIndex;
 

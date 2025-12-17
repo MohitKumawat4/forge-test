@@ -419,7 +419,7 @@ export function ParallaxDivider() {
                         </h2>
 
                         {/* Subtitle */}
-                        <p className="text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+                        <p className="text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto leading-[25px] lg:leading-7">
                             Experience the next generation of enterprise intelligence.
                             Build, automate, and scale with unprecedented power.
                         </p>

@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import FloatingLines from "@/components/FloatingLines";
 
 export default function PricingPage() {
     // Keeping logic for future use, though design shows specific prices
@@ -44,19 +45,13 @@ export default function PricingPage() {
             </div>
 
             {/* --- Hero Section (Lighter Blue Background) --- */}
-            <section className="relative h-[650px] bg-[#4f46e5] overflow-hidden">
-                {/* Background Image Overlay - Updated for Tech Theme */}
-                <div
-                    className="absolute inset-0 z-0 opacity-20 mix-blend-overlay pointer-events-none"
-                    style={{
-                        backgroundImage: "url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop')",
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center center'
-                    }}
-                />
-
-                {/* Gradient Overlay for visual depth */}
-                <div className="absolute inset-0 bg-linear-to-b from-[#4338ca]/90 via-[#3b82f6]/80 to-[#60a5fa] z-0 pointer-events-none" />
+            <section className="relative h-[650px] bg-[#000] overflow-hidden">
+                <div className="absolute inset-0 z-0">
+                    <FloatingLines
+                        linesGradient={["#4f46e5", "#3b82f6", "#60a5fa"]}
+                        animationSpeed={0.5}
+                    />
+                </div>
 
                 {/* Decorative Elements (Blue Lines) */}
                 <div className="absolute right-0 top-1/3 w-[300px] h-[100px] border-2 border-cyan-400 rounded-l-full opacity-30 translate-x-1/2 pointer-events-none" />

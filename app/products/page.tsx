@@ -51,26 +51,116 @@ const products = [
 // Helper import since I used Database above
 import { Database } from "lucide-react";
 
+import { HeroParallax } from "@/components/ui/hero-parallax";
+
+const productsData = [
+    {
+        title: "Agent Engine",
+        link: "#agent-engine",
+        thumbnail:
+            "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2670&auto=format&fit=crop",
+    },
+    {
+        title: "Forge Studio",
+        link: "#forge-studio",
+        thumbnail:
+            "https://images.unsplash.com/photo-1555099962-4199c345e5dd?q=80&w=2670&auto=format&fit=crop",
+    },
+    {
+        title: "Neural Vault",
+        link: "#neural-vault",
+        thumbnail:
+            "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2670&auto=format&fit=crop",
+    },
+    {
+        title: "GuardRail",
+        link: "#guard-rail",
+        thumbnail:
+            "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2670&auto=format&fit=crop",
+    },
+    {
+        title: "Editorially",
+        link: "https://editorially.org",
+        thumbnail:
+            "https://aceternity.com/images/products/thumbnails/new/editorially.png",
+    },
+    {
+        title: "Editrix AI",
+        link: "https://editrix.ai",
+        thumbnail:
+            "https://aceternity.com/images/products/thumbnails/new/editrix.png",
+    },
+    {
+        title: "Pixel Perfect",
+        link: "https://app.pixelperfect.quest",
+        thumbnail:
+            "https://aceternity.com/images/products/thumbnails/new/pixelperfect.png",
+    },
+    {
+        title: "Algochurn",
+        link: "https://algochurn.com",
+        thumbnail:
+            "https://aceternity.com/images/products/thumbnails/new/algochurn.png",
+    },
+    {
+        title: "Aceternity UI",
+        link: "https://ui.aceternity.com",
+        thumbnail:
+            "https://aceternity.com/images/products/thumbnails/new/aceternityui.png",
+    },
+    {
+        title: "Tailwind Master Kit",
+        link: "https://tailwindmasterkit.com",
+        thumbnail:
+            "https://aceternity.com/images/products/thumbnails/new/tailwindmasterkit.png",
+    },
+    {
+        title: "SmartBridge",
+        link: "https://smartbridgetech.com",
+        thumbnail:
+            "https://aceternity.com/images/products/thumbnails/new/smartbridge.png",
+    },
+    {
+        title: "Renderwork",
+        link: "https://renderwork.studio",
+        thumbnail:
+            "https://aceternity.com/images/products/thumbnails/new/renderwork.png",
+    },
+    {
+        title: "Creme Digital",
+        link: "https://cremedigital.com",
+        thumbnail:
+            "https://aceternity.com/images/products/thumbnails/new/cremedigital.png",
+    },
+    {
+        title: "Golden Bells Academy",
+        link: "https://goldenbellsacademy.com",
+        thumbnail:
+            "https://aceternity.com/images/products/thumbnails/new/goldenbellsacademy.png",
+    },
+    {
+        title: "Invoker Labs",
+        link: "https://invoker.lol",
+        thumbnail:
+            "https://aceternity.com/images/products/thumbnails/new/invoker.png",
+    },
+    {
+        title: "E Free Invoice",
+        link: "https://efreeinvoice.com",
+        thumbnail:
+            "https://aceternity.com/images/products/thumbnails/new/efreeinvoice.png",
+    },
+];
+
 export default function Products() {
     return (
-        <main className="min-h-screen bg-slate-50">
+        <main className="min-h-screen bg-white">
             <Navbar />
 
-            {/* Hero Section */}
-            <section className="pt-32 pb-20 px-6 md:px-8 w-full md:w-[90%] max-w-screen-2xl mx-auto text-center">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="max-w-3xl mx-auto"
-                >
-                    <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-slate-900 mb-8">
-                        The <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">Forge Suite</span>
-                    </h1>
-                    <p className="text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto">
-                        A complete ecosystem of tools to build, deploy, and manage intelligent AI agents at enterprise scale.
-                    </p>
-                </motion.div>
-            </section>
+            {/* Hero Section with Parallax */}
+            <HeroParallax products={productsData} />
+
+            {/* Main Product Showcase - continued below */}
 
             {/* Main Product Showcase */}
             <section className="px-6 md:px-8 pb-32 w-full md:w-[90%] max-w-screen-2xl mx-auto space-y-32">

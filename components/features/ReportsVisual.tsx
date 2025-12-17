@@ -329,7 +329,7 @@ export function ReportsVisual() {
 
                                     {/* Typewriter Text */}
                                     <div className="flex-1 min-h-[24px]">
-                                        <p className="text-sm text-zinc-700 leading-relaxed">
+                                        <p className="text-sm text-zinc-700 leading-[25px] lg:leading-7">
                                             {typedText}
                                             {/* Blinking cursor */}
                                             <motion.span
@@ -436,7 +436,7 @@ export function ReportsVisual() {
                     </div>
 
                     {/* System Prompt Content */}
-                    <div className="space-y-3 text-sm text-zinc-500 leading-relaxed">
+                    <div className="space-y-3 text-sm text-zinc-500 leading-[25px] lg:leading-7">
                         <motion.p
                             initial={{ opacity: 0, x: -5 }}
                             animate={{ opacity: 1, x: 0 }}
@@ -482,7 +482,7 @@ export function ReportsVisual() {
                                         </span>
                                     </div>
                                     {/* Typewriter Summary Text */}
-                                    <p className="text-sm text-emerald-700 leading-relaxed font-medium">
+                                    <p className="text-sm text-emerald-700 leading-[25px] lg:leading-7 font-medium">
                                         {testCasesSummaryText}
                                         {/* Blinking cursor while typing */}
                                         {isTypingSummary && testCasesSummaryText.length < testCasesSummaryFullText.length && (
