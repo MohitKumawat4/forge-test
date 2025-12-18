@@ -102,16 +102,28 @@ export function Hero({ className = "" }: HeroProps) {
                                 transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
                                 className="flex flex-col sm:flex-row items-start justify-start lg:justify-start gap-4 w-full sm:w-auto"
                             >
-                                <a
-                                    href="#"
-                                    className="w-full sm:w-auto text-center rounded-full bg-[#5ccee5] px-8 py-4 text-base font-bold text-white shadow-lg shadow-teal-500/20 hover:bg-teal-500 transition-all transform hover:scale-105 active:scale-95 whitespace-nowrap"
+                                <button
+                                    onClick={() => window.dispatchEvent(new CustomEvent("open-waitlist"))}
+                                    className="w-full sm:w-auto text-center rounded-full bg-[#5ccee5] px-8 py-4 text-base font-bold text-white shadow-lg shadow-teal-500/20 hover:bg-teal-500 transition-all transform hover:scale-105 active:scale-95 whitespace-nowrap cursor-pointer"
                                 >
-                                    Start Building
-                                </a>
-                                <a href="#" className="w-full sm:w-auto flex items-center justify-center gap-2 text-base font-semibold text-zinc-900 hover:text-[#5ccee5] transition-colors py-4 px-8 rounded-full border border-zinc-200 bg-white hover:border-[#5ccee5] lg:border-none lg:bg-transparent">
+                                    Start Journey
+                                </button>
+                                <button
+                                    type="button"
+                                    onClick={() => {
+                                        // Slight delay to ensure click clears any dense 3D/canvas event listeners
+                                        setTimeout(() => {
+                                            const element = document.getElementById('demo-video');
+                                            if (element) {
+                                                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                            }
+                                        }, 50);
+                                    }}
+                                    className="group relative z-50 w-full sm:w-auto flex items-center justify-center gap-2 text-base font-semibold text-zinc-900 hover:text-[#5ccee5] transition-colors py-4 px-8 rounded-full border border-zinc-200 bg-white hover:border-[#5ccee5] lg:border-none lg:bg-transparent cursor-pointer outline-none"
+                                >
                                     See Demo
                                     <span className="transition-transform group-hover:translate-x-1">→</span>
-                                </a>
+                                </button>
                             </motion.div>
 
                         </div>

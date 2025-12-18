@@ -126,7 +126,7 @@ export function ReportsVisual() {
                 >
                     {/* Subtle glow effect on card */}
                     <motion.div
-                        className="absolute -inset-0.5 bg-gradient-to-br from-emerald-200/20 via-transparent to-zinc-200/20 rounded-2xl -z-10 blur-sm"
+                        className="absolute -inset-0.5 bg-linear-to-br from-blue-200/20 via-transparent to-zinc-200/20 rounded-2xl -z-10 blur-sm"
                         animate={{
                             opacity: [0.3, 0.6, 0.3],
                         }}
@@ -138,16 +138,16 @@ export function ReportsVisual() {
                         <div className="flex items-center gap-3">
                             {/* Report Icon with pulse animation */}
                             <motion.div
-                                className="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-50 to-emerald-100 border border-emerald-200/50 flex items-center justify-center relative"
+                                className="w-8 h-8 rounded-lg bg-linear-to-br from-blue-50 to-blue-100 border border-blue-200/50 flex items-center justify-center relative"
                                 animate={{ scale: [1, 1.05, 1] }}
                                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                             >
-                                <svg className="w-4 h-4 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <svg className="w-4 h-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                                 </svg>
                                 {/* Ping indicator */}
                                 <motion.div
-                                    className="absolute -top-0.5 -right-0.5 w-2 h-2 bg-emerald-500 rounded-full"
+                                    className="absolute -top-0.5 -right-0.5 w-2 h-2 bg-blue-500 rounded-full"
                                     animate={{ scale: [1, 1.5, 1], opacity: [1, 0.5, 1] }}
                                     transition={{ duration: 1.5, repeat: Infinity }}
                                 />
@@ -235,7 +235,7 @@ export function ReportsVisual() {
                             className="flex flex-col"
                         >
                             <motion.span
-                                className="text-lg font-bold text-emerald-600 flex items-center gap-1"
+                                className="text-lg font-bold text-blue-600 flex items-center gap-1"
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={{ delay: 0.5 }}
@@ -276,7 +276,7 @@ export function ReportsVisual() {
                     >
                         {/* Outer glow effect when expanded - exceeds card boundaries */}
                         <motion.div
-                            className="absolute -inset-3 bg-gradient-to-r from-emerald-400/30 via-teal-400/20 to-emerald-400/30 rounded-2xl blur-xl -z-10"
+                            className="absolute -inset-3 bg-linear-to-r from-blue-400/30 via-cyan-400/20 to-blue-400/30 rounded-2xl blur-xl -z-10"
                             initial={{ opacity: 0 }}
                             animate={{
                                 opacity: inputExpanded ? [0.4, 0.7, 0.4] : 0,
@@ -289,7 +289,7 @@ export function ReportsVisual() {
                             className="bg-zinc-50/80 backdrop-blur-md border border-zinc-200/60 rounded-xl overflow-hidden"
                             animate={{
                                 boxShadow: inputExpanded
-                                    ? "0 20px 40px -10px rgba(16, 185, 129, 0.25)"
+                                    ? "0 20px 40px -10px rgba(59, 130, 246, 0.25)"
                                     : "0 4px 12px -2px rgba(0, 0, 0, 0.05)"
                             }}
                             transition={{ duration: 0.4 }}
@@ -304,8 +304,8 @@ export function ReportsVisual() {
                                             whileTap={{ scale: 0.9 }}
                                             onClick={() => setFeedbackVote(feedbackVote === 'up' ? null : 'up')}
                                             className={`p-1.5 rounded-md transition-all ${feedbackVote === 'up'
-                                                ? 'bg-emerald-100 text-emerald-600 shadow-sm'
-                                                : 'bg-white border border-zinc-200 text-zinc-400 hover:text-emerald-500'
+                                                ? 'bg-blue-100 text-blue-600 shadow-sm'
+                                                : 'bg-white border border-zinc-200 text-zinc-400 hover:text-blue-500'
                                                 }`}
                                         >
                                             <svg className="w-4 h-4" fill={feedbackVote === 'up' ? 'currentColor' : 'none'} viewBox="0 0 24 24" stroke="currentColor">
@@ -362,7 +362,7 @@ export function ReportsVisual() {
                                         whileTap={{ scale: 0.98 }}
                                         onClick={handleTestCases}
                                         className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-medium transition-colors ${showTestCasesSummary
-                                            ? 'bg-emerald-100 border border-emerald-300 text-emerald-700'
+                                            ? 'bg-blue-100 border border-blue-300 text-blue-700'
                                             : 'bg-white border border-zinc-200 text-zinc-600 hover:bg-zinc-50'
                                             }`}
                                     >
@@ -376,8 +376,8 @@ export function ReportsVisual() {
                                         whileTap={{ scale: 0.98 }}
                                         onClick={handleSave}
                                         className={`flex items-center gap-1.5 px-4 py-1.5 rounded-lg text-[11px] font-semibold transition-all ${isSaved
-                                            ? 'bg-emerald-500 text-white'
-                                            : 'bg-emerald-700 text-white hover:bg-emerald-600'
+                                            ? 'bg-blue-500 text-white'
+                                            : 'bg-blue-600 text-white hover:bg-blue-700'
                                             }`}
                                     >
                                         {isSaved ? (
@@ -398,7 +398,7 @@ export function ReportsVisual() {
                                         ) : (
                                             <>
                                                 Save
-                                                <span className="text-emerald-300">↵</span>
+                                                <span className="text-blue-300">↵</span>
                                             </>
                                         )}
                                     </motion.button>
@@ -428,7 +428,7 @@ export function ReportsVisual() {
                     {/* Section Label */}
                     <div className="flex items-center gap-2 mb-3">
                         <motion.div
-                            className="w-1 h-4 bg-emerald-500 rounded-full"
+                            className="w-1 h-4 bg-blue-500 rounded-full"
                             animate={{ scaleY: [1, 1.2, 1] }}
                             transition={{ duration: 2, repeat: Infinity }}
                         />
@@ -473,21 +473,21 @@ export function ReportsVisual() {
                                     {/* Summary Header */}
                                     <div className="flex items-center gap-2 mb-2">
                                         <motion.div
-                                            className="w-1.5 h-1.5 rounded-full bg-emerald-500"
+                                            className="w-1.5 h-1.5 rounded-full bg-blue-500"
                                             animate={{ scale: [1, 1.3, 1] }}
                                             transition={{ duration: 1.5, repeat: Infinity }}
                                         />
-                                        <span className="text-[10px] font-semibold text-emerald-600 uppercase tracking-wider">
+                                        <span className="text-[10px] font-semibold text-blue-600 uppercase tracking-wider">
                                             Test Summary
                                         </span>
                                     </div>
                                     {/* Typewriter Summary Text */}
-                                    <p className="text-sm text-emerald-700 leading-[25px] lg:leading-7 font-medium">
+                                    <p className="text-sm text-blue-700 leading-[25px] lg:leading-7 font-medium">
                                         {testCasesSummaryText}
                                         {/* Blinking cursor while typing */}
                                         {isTypingSummary && testCasesSummaryText.length < testCasesSummaryFullText.length && (
                                             <motion.span
-                                                className="inline-block w-0.5 h-4 bg-emerald-500 ml-0.5 align-middle rounded-sm"
+                                                className="inline-block w-0.5 h-4 bg-blue-500 ml-0.5 align-middle rounded-sm"
                                                 animate={{ opacity: [1, 0, 1] }}
                                                 transition={{ duration: 0.6, repeat: Infinity }}
                                             />

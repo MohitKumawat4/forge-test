@@ -8,14 +8,21 @@ export function ParallaxPromo() {
 
     // State for mobile fullscreen mode -M
     const [isFullscreen, setIsFullscreen] = useState(false);
+    const [isMounted, setIsMounted] = React.useState(false);
+
+    // Set mounted state on client-side and prevent hydration mismatch
+    React.useEffect(() => {
+        setIsMounted(true);
+    }, []);
 
     // Toggle fullscreen on mobile -M
     const toggleFullscreen = () => {
+        if (!isMounted) return;
         setIsFullscreen(!isFullscreen);
     };
 
     return (
-        <section className="py-8 md:py-29 pb-27 pt-16 bg-white">
+        <section id="demo-video" className="py-8 md:py-29 pb-27 pt-16 bg-white">
             {/* Container with responsive width -M -W */}
             <div className="mx-auto w-full md:w-[80%] max-w-screen-2xl px-4 md:px-8">
                 {/* Video Card Container - Clickable on mobile only -M */}
@@ -23,8 +30,8 @@ export function ParallaxPromo() {
                     className={`relative w-full overflow-hidden shadow-2xl bg-slate-100 cursor-pointer md:cursor-default ${isFullscreen ? '' : 'rounded-2xl md:rounded-3xl'
                         }`}
                     onClick={() => {
-                        // Only toggle on mobile (screens < 768px)
-                        if (window.innerWidth < 768) {
+                        // Only try to toggle on client after mount
+                        if (isMounted && window.innerWidth < 768) {
                             toggleFullscreen();
                         }
                     }}
@@ -72,7 +79,7 @@ export function ParallaxPromo() {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.3 }}
-                        className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/90 backdrop-blur-xl md:hidden overflow-hidden"
+                        className="fixed inset-0 z-9999 flex items-center justify-center bg-black/90 backdrop-blur-xl md:hidden overflow-hidden"
                         style={{
                             // Ensures it covers the entire viewport including safe areas
                             top: 0,

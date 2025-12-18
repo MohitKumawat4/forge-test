@@ -27,7 +27,7 @@ const benefits = [
         description: "Set up intelligent automation, accept inputs, and generate outputs directly from your Dashboard.",
         cta: "Start building",
         icon: Box,
-        color: "bg-emerald-500",
+        color: "bg-blue-600",
         image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop"
     }
 ];
@@ -120,10 +120,13 @@ function BenefitCard({ benefit }: { benefit: typeof benefits[0] }) {
                     variants={ctaVariants}
                     className="mt-6 flex items-center"
                 >
-                    <a href="#" className="flex items-center gap-1.5 text-[#635bff] font-semibold text-[15px] hover:text-[#0a2540] transition-colors group-hover:gap-2">
+                    <button
+                        onClick={() => window.dispatchEvent(new CustomEvent("open-waitlist"))}
+                        className="flex items-center gap-1.5 text-[#635bff] font-semibold text-[15px] hover:text-[#0a2540] transition-colors group-hover:gap-2 cursor-pointer"
+                    >
                         {benefit.cta}
                         <ArrowRight className="w-4 h-4" />
-                    </a>
+                    </button>
                 </motion.div>
             </div>
         </motion.div>
@@ -206,7 +209,7 @@ function MobileBenefitsCarousel({ items }: { items: React.ReactNode[] }) {
                     <ChevronLeft className="w-6 h-6" />
                 </button>
                 <button
-                    className="absolute top-1/2 -right-4 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center bg-emerald-500 text-white shadow-md hover:bg-emerald-600 z-20"
+                    className="absolute top-1/2 -right-4 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center bg-blue-600 text-white shadow-md hover:bg-blue-700 z-20"
                     onClick={() => paginate(1)}
                 >
                     <ChevronRight className="w-6 h-6" />
@@ -224,7 +227,7 @@ function MobileBenefitsCarousel({ items }: { items: React.ReactNode[] }) {
                         }}
                         className={`
                             h-1.5 rounded-full transition-all duration-300 
-                            ${idx === current ? 'w-8 bg-emerald-500' : 'w-2 bg-slate-300'}
+                            ${idx === current ? 'w-8 bg-blue-600' : 'w-2 bg-slate-300'}
                         `}
                     />
                 ))}

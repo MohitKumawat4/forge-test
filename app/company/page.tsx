@@ -28,15 +28,15 @@ export default function Company() {
                                 transition={{ duration: 0.8, ease: "easeOut" }}
                                 className="text-center lg:text-left"
                             >
-                                <h1 className="text-4xl font-bold text-white sm:text-6xl lg:text-7xl tracking-tight leading-tight">
+                                <h1 className="text-h1-apple text-white tracking-tight leading-tight">
                                     Collaborate remotely, with
                                     <div className="relative inline-flex mt-2">
                                         <span className="absolute inset-x-0 bottom-0 border-b-12 sm:border-b-20 border-blue-500/50 blur-sm"></span>
-                                        <h1 className="relative text-4xl font-bold text-white sm:text-6xl lg:text-7xl">Enterprise Forge.</h1>
+                                        <h1 className="relative text-h1-apple text-white">Enterprise Forge.</h1>
                                     </div>
                                 </h1>
 
-                                <p className="mt-8 text-lg text-blue-100 sm:text-xl leading-relaxed max-w-lg mx-auto lg:mx-0">
+                                <p className="mt-8 text-p1-apple text-blue-100 max-w-lg mx-auto lg:mx-0 leading-[25px] lg:leading-7">
                                     Our mission is to liberate humans from robotic work by creating intelligent agents that can think, plan, and execute complex workflows autonomously.
                                 </p>
 
@@ -85,14 +85,14 @@ export default function Company() {
             <section className="py-24 px-6 md:px-8 w-full md:w-[90%] max-w-screen-2xl mx-auto">
                 <div className="grid md:grid-cols-2 gap-16 items-start">
                     <div className="prose prose-lg text-slate-600">
-                        <h2 className="text-3xl font-bold text-slate-900 mb-6">The Story So Far</h2>
-                        <p>
+                        <h2 className="text-h2-apple text-slate-900 mb-6">The Story So Far</h2>
+                        <p className="leading-[25px] lg:leading-7">
                             Enterprise Forge started with a simple observation: developers were spending too much time wiring APIs together and not enough time solving actual business problems.
                         </p>
-                        <p>
+                        <p className="leading-[25px] lg:leading-7">
                             We realized that the future of software isn't just about faster coding, but about software that can code itself. We set out to build a platform where business logic could be expressed in plain English and executed by reliable, autonomous agents.
                         </p>
-                        <p>
+                        <p className="leading-[25px] lg:leading-7">
                             Today, we are trusted by Fortune 500 companies to handle their most critical operations, from financial audits to customer support.
                         </p>
                     </div>
@@ -110,7 +110,7 @@ export default function Company() {
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-slate-900 text-lg mb-1">{value.title}</h3>
-                                    <p className="text-slate-500">{value.text}</p>
+                                    <p className="text-slate-500 leading-[25px] lg:leading-7">{value.text}</p>
                                 </div>
                             </div>
                         ))}
@@ -122,8 +122,8 @@ export default function Company() {
             {/* Leadership Placeholder */}
             <section className="py-24 bg-slate-900 text-white px-6 md:px-8">
                 <div className="w-full md:w-[90%] max-w-screen-2xl mx-auto text-center mb-16">
-                    <h2 className="text-3xl font-bold mb-4">Meet the Team</h2>
-                    <p className="text-slate-400 max-w-2xl mx-auto">
+                    <h2 className="text-h2-apple font-bold mb-4">Meet the Team</h2>
+                    <p className="text-slate-400 max-w-2xl mx-auto leading-[25px] lg:leading-7">
                         Backed by world-class investors and led by industry veterans from Google, Microsoft, and Tesla.
                     </p>
                 </div>
@@ -145,7 +145,7 @@ export default function Company() {
 
             {/* Offices */}
             <section className="py-24 px-6 md:px-8 w-full md:w-[90%] max-w-screen-2xl mx-auto text-center relative overflow-hidden">
-                <h2 className="text-3xl font-bold text-slate-900 mb-12">Our Offices</h2>
+                <h2 className="text-h2-apple text-slate-900 mb-12">Our Offices</h2>
                 <div className="flex flex-wrap justify-center gap-4 md:gap-12 relative z-10">
                     {["San Francisco", "New York", "London", "Singapore", "Remote"].map((city) => (
                         <div key={city} className="px-6 py-3 rounded-full border border-slate-200 text-slate-600 font-medium hover:border-slate-800 hover:text-slate-900 transition-colors cursor-default">

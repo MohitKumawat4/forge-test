@@ -22,7 +22,7 @@ export default function Resources() {
                                 Resources to<br />
                                 Scale Faster.
                             </h1>
-                            <p className="mt-8 text-xl text-black">Guides, tutorials, and insights to help you build your autonomous enterprise.</p>
+                            <p className="mt-8 text-xl text-black leading-[25px] lg:leading-7">Guides, tutorials, and insights to help you build your autonomous enterprise.</p>
 
                             <form action="#" method="POST" className="max-w-xl mx-auto mt-8 bg-white lg:mx-0 sm:bg-transparent lg:mt-12 rounded-xl">
                                 <div className="p-4 sm:p-2 sm:bg-white sm:border-2 sm:border-transparent sm:rounded-full sm:focus-within:border-orange-500 sm:focus-within:ring-1 sm:focus-within:ring-orange-500">
@@ -47,7 +47,7 @@ export default function Resources() {
                                     </div>
                                 </div>
                             </form>
-                            <p className="mt-5 text-base text-black">Weekly insights . No spam ever</p>
+                            <p className="mt-5 text-base text-black leading-[25px] lg:leading-7">Weekly insights . No spam ever</p>
                         </div>
 
                         <div className="absolute right-0 z-10 -bottom-16 lg:top-24 lg:-left-20">
@@ -70,7 +70,7 @@ export default function Resources() {
                                     </svg>
                                     <h2 className="font-bold text-white text-7xl ml-2.5">150+</h2>
                                 </div>
-                                <p className="max-w-xs mt-1.5 text-xl text-white">Articles and guides available for free</p>
+                                <p className="max-w-xs mt-1.5 text-xl text-white leading-[25px] lg:leading-7">Articles and guides available for free</p>
                             </div>
                         </div>
                     </div>
@@ -94,7 +94,7 @@ export default function Resources() {
                             </div>
                             <div className="text-sm font-semibold text-slate-500 mb-2 uppercase tracking-wide">{item.type}</div>
                             <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors">{item.title}</h3>
-                            <p className="text-slate-600 mb-6">Learn the fundamentals and advanced techniques to maximize your productivity.</p>
+                            <p className="text-slate-600 mb-6 leading-[25px] lg:leading-7">Learn the fundamentals and advanced techniques to maximize your productivity.</p>
                             <a href="#" className="inline-flex items-center text-slate-900 font-bold hover:gap-2 transition-all">
                                 Read Now <ArrowRight size={16} className="ml-2" />
                             </a>

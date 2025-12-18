@@ -33,14 +33,14 @@ function FeatureCard({ feature, index }: { feature: typeof features[0]; index: n
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.15 }}
-            className="group relative flex flex-col h-full bg-slate-50 border border-slate-200 rounded-2xl p-8 hover:bg-white hover:shadow-xl hover:border-emerald-100 transition-all duration-300 min-w-[280px]"
+            className="group relative flex flex-col h-full bg-slate-50 border border-slate-200 rounded-2xl p-8 hover:bg-white hover:shadow-xl hover:border-blue-100 transition-all duration-300 min-w-[280px]"
         >
             <div className="relative z-10 flex flex-col h-full">
-                <div className="mb-6 inline-flex items-center justify-center w-14 h-14 rounded-xl bg-emerald-100 text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white group-hover:scale-110 transition-all duration-300">
+                <div className="mb-6 inline-flex items-center justify-center w-14 h-14 rounded-xl bg-blue-100 text-blue-600 group-hover:bg-blue-600 group-hover:text-white group-hover:scale-110 transition-all duration-300">
                     <Icon size={32} strokeWidth={1.5} />
                 </div>
 
-                <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-emerald-700 transition-colors">
+                <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-blue-700 transition-colors">
                     {feature.title}
                 </h3>
 
@@ -49,8 +49,8 @@ function FeatureCard({ feature, index }: { feature: typeof features[0]; index: n
                 </p>
 
                 <div className="mt-auto pt-6 border-t border-slate-200">
-                    <div className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-emerald-50 border border-emerald-100 text-emerald-700 text-sm font-medium">
-                        <Sparkles size={14} className="fill-emerald-700/20" />
+                    <div className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-cyan-50 border border-cyan-100 text-cyan-700 text-sm font-medium">
+                        <Sparkles size={14} className="fill-cyan-700/20" />
                         {feature.badge}
                     </div>
                 </div>
@@ -135,7 +135,7 @@ function MobileAICarousel({ items }: { items: React.ReactNode[] }) {
                     <ChevronLeft className="w-6 h-6" />
                 </button>
                 <button
-                    className="absolute top-1/2 -right-4 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center bg-emerald-500 text-white shadow-md hover:bg-emerald-600 z-20"
+                    className="absolute top-1/2 -right-4 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center bg-blue-600 text-white shadow-md hover:bg-blue-700 z-20"
                     onClick={() => paginate(1)}
                 >
                     <ChevronRight className="w-6 h-6" />
@@ -153,7 +153,7 @@ function MobileAICarousel({ items }: { items: React.ReactNode[] }) {
                         }}
                         className={`
                             h-1.5 rounded-full transition-all duration-300 
-                            ${idx === current ? 'w-8 bg-emerald-500' : 'w-2 bg-slate-300'}
+                            ${idx === current ? 'w-8 bg-blue-600' : 'w-2 bg-slate-300'}
                         `}
                     />
                 ))}
@@ -169,7 +169,7 @@ export function AICapabilitiesSection() {
     ));
 
     return (
-        <section className="py-5 md:py-24 bg-white relative overflow-hidden">
+        <section className="py-12 md:py-24 bg-white relative overflow-hidden">
             {/* Background Effects */}
             <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] bg-size-[20px_20px] opacity-40"></div>
 
@@ -186,7 +186,7 @@ export function AICapabilitiesSection() {
                         transition={{ duration: 0.5 }}
                         className="text-3xl md:text-5xl font-bold text-slate-900 tracking-tight mb-4 lg:mb-6"
                     >
-                        Intelligent. Autonomous. <span className="text-transparent bg-clip-text bg-linear-to-r from-emerald-600 to-cyan-600 md:inline">Built for You.</span>
+                        Intelligent. Autonomous. <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-cyan-600 md:inline">Built for You.</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -197,7 +197,7 @@ export function AICapabilitiesSection() {
                         Our AI doesn't just generate code—it understands your business. Through deep-dive analysis, it creates a comprehensive specification of every internal tool you need, then architects and deploys a fully integrated platform tailored to your operations.
                     </motion.p>
 
-                    {/* Border separator - Mobile only */}
+                    {/* Border separator - Mobile only -M */}
                     {/* <div className="md:hidden border-t border-slate-900 border-1.5"></div> */}
                 </div>
 

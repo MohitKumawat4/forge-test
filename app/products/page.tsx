@@ -163,7 +163,7 @@ export default function Products() {
             {/* Main Product Showcase - continued below */}
 
             {/* Main Product Showcase */}
-            <section className="px-6 md:px-8 pb-32 w-full md:w-[90%] max-w-screen-2xl mx-auto space-y-32">
+            <section className="px-6 md:px-8 pb-32 w-full md:w-[90%] max-w-screen-2xl mx-auto space-y-32 pt-16">
                 {products.map((product, index) => (
                     <motion.div
                         key={product.id}
@@ -180,9 +180,9 @@ export default function Products() {
                             </div>
                             <div>
                                 <h3 className="text-sm font-bold text-slate-500 uppercase tracking-widest mb-2">{product.tagline}</h3>
-                                <h2 className="text-4xl md:text-5xl font-bold text-slate-900">{product.name}</h2>
+                                <h2 className="text-h2-apple text-slate-900">{product.name}</h2>
                             </div>
-                            <p className="text-xl text-slate-600 leading-relaxed max-w-2xl">
+                            <p className="text-p1-apple text-slate-600 max-w-2xl leading-[25px] lg:leading-7">
                                 {product.description}
                             </p>
 
@@ -203,7 +203,7 @@ export default function Products() {
                         </div>
 
                         {/* Visual / Image Placeholder - NOW FULL WIDTH */}
-                        <div className="w-full bg-slate-100/50 rounded-3xl border border-slate-200 shadow-xl overflow-hidden aspect-[16/9] relative group">
+                        <div className="w-full bg-slate-100/50 rounded-3xl border border-slate-200 shadow-xl overflow-hidden aspect-video relative group">
                             <div className="absolute inset-0 bg-slate-50/50 group-hover:bg-transparent transition-colors duration-500 pointer-events-none z-10" />
 
                             {/* Content */}
@@ -236,7 +236,7 @@ export default function Products() {
             {/* Integrations Banner */}
             <section className="bg-slate-900 py-24 px-6 lg:px-8 overflow-hidden relative">
                 <div className="w-full md:w-[90%] max-w-screen-2xl mx-auto text-center relative z-10">
-                    <h2 className="text-3xl font-bold text-white mb-12">Works with your stack</h2>
+                    <h2 className="text-h2-apple text-white mb-12">Works with your stack</h2>
                     <div className="flex flex-wrap justify-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
                         {/* Placeholder Logos */}
                         {["Slack", "HubSpot", "Salesforce", "Jira", "Notion", "Linear"].map((brand) => (

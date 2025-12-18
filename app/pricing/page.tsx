@@ -62,7 +62,7 @@ export default function PricingPage() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
-                        className="text-5xl md:text-6xl font-bold tracking-tight mb-6"
+                        className="text-h1-apple tracking-tight mb-6"
                     >
                         Your Plan, Your Choice
                     </motion.h1>
@@ -70,7 +70,7 @@ export default function PricingPage() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.1 }}
-                        className="max-w-xl text-lg md:text-xl text-white/90 font-light leading-relaxed"
+                        className="text-p1-apple text-white/90 max-w-xl leading-[25px] lg:leading-7"
                     >
                         The best YOU is closer than you think. Find the right plan for your health and wellness needs.
                     </motion.p>
@@ -109,7 +109,7 @@ export default function PricingPage() {
                                     <span className="text-slate-400 text-[10px] font-bold uppercase tracking-wider mb-6">per month</span>
 
                                     {/* Description */}
-                                    <p className="text-slate-500 text-xs leading-5 max-w-[180px] mb-2 min-h-[40px] font-medium">
+                                    <p className="text-slate-500 text-xs leading-[25px] lg:leading-7 max-w-[180px] mb-2 min-h-[40px] font-medium">
                                         {plan.description}
                                     </p>
 
@@ -131,7 +131,7 @@ export default function PricingPage() {
                                     <span className="text-[9px] text-slate-400 font-black tracking-[0.2em] uppercase mb-4 block opacity-70">
                                         INCLUDES:
                                     </span>
-                                    <p className="text-xs text-slate-500 font-medium leading-5 max-w-[200px] mb-6">
+                                    <p className="text-xs text-slate-500 font-medium leading-[25px] lg:leading-7 max-w-[200px] mb-6">
                                         {plan.includes}
                                     </p>
 

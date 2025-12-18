@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { Menu, X } from "lucide-react";
+import { WaitlistModal } from "./WaitlistModal";
 
 function cn(...inputs: ClassValue[]) {
     return twMerge(clsx(inputs));
@@ -47,8 +48,18 @@ export function Navbar({ className = "" }: NavbarProps) {
         }
     }, [isMobileMenuOpen]);
 
+    const openWaitlist = (e?: React.MouseEvent) => {
+        if (e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+        window.dispatchEvent(new CustomEvent("open-waitlist"));
+        setIsMobileMenuOpen(false);
+    };
+
     return (
         <>
+            <WaitlistModal />
             <nav className={cn("fixed top-0 left-0 right-0 z-150 flex justify-center pt-1", className)}>
                 <div className="w-full lg:w-[90%] max-w-screen-2xl mx-auto relative flex items-center justify-between h-14 px-6 lg:px-8">
 
@@ -149,7 +160,7 @@ export function Navbar({ className = "" }: NavbarProps) {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
                         transition={{ duration: 0.2 }}
-                        className="fixed inset-0 z-[99] bg-white pt-16 px-6 pb-6 overflow-y-auto lg:hidden flex flex-col"
+                        className="fixed inset-0 z-99 bg-white pt-16 px-6 pb-6 overflow-y-auto lg:hidden flex flex-col"
                     >
                         {/* Navigation Links List */}
                         <div className="flex flex-col">
@@ -183,27 +194,24 @@ export function Navbar({ className = "" }: NavbarProps) {
 
                         {/* Action Buttons Stacked at Bottom */}
                         <div className="mt-auto pt-8 flex flex-col gap-3">
-                            <Link
-                                href="#"
+                            <button
+                                onClick={openWaitlist}
                                 className="w-full py-3 rounded-full border border-gray-300 text-center font-semibold text-gray-900 hover:bg-gray-50 transition-colors"
-                                onClick={() => setIsMobileMenuOpen(false)}
                             >
                                 Book demo
-                            </Link>
-                            <Link
-                                href="#"
+                            </button>
+                            <button
+                                onClick={openWaitlist}
                                 className="w-full py-3 rounded-full border border-gray-300 text-center font-semibold text-gray-900 hover:bg-gray-50 transition-colors"
-                                onClick={() => setIsMobileMenuOpen(false)}
                             >
                                 Sign In
-                            </Link>
-                            <Link
-                                href="#"
+                            </button>
+                            <button
+                                onClick={openWaitlist}
                                 className="w-full py-3 rounded-full bg-black text-white text-center font-semibold hover:bg-gray-800 transition-colors"
-                                onClick={() => setIsMobileMenuOpen(false)}
                             >
                                 Get Started
-                            </Link>
+                            </button>
                         </div>
                     </motion.div>
                 )}
@@ -249,8 +257,8 @@ const SlideText = ({ text, isHovered }: { text: string; isHovered: boolean }) =>
                 transition={{ duration: 0.5, ease: [0.33, 1, 0.68, 1] }} // Smooth ease-out
                 className="flex flex-col"
             >
-                <span className="block h-[20px] flex items-center">{text}</span>
-                <span className="block h-[20px] flex items-center absolute top-full">{text}</span>
+                <span className="h-[20px] flex items-center">{text}</span>
+                <span className="h-[20px] flex items-center absolute top-full">{text}</span>
             </motion.div>
         </div>
     );
@@ -316,10 +324,15 @@ function NavLinks() {
 function ActionButtons() {
     const [hoveredButton, setHoveredButton] = useState<string | null>(null);
 
+    const openWaitlist = (e: React.MouseEvent) => {
+        e.preventDefault();
+        window.dispatchEvent(new CustomEvent("open-waitlist"));
+    };
+
     return (
         <>
-            <Link
-                href="#"
+            <button
+                onClick={openWaitlist}
                 className="hidden lg:block px-2 xl:px-4 py-2 group"
                 onMouseEnter={() => setHoveredButton("signin")}
                 onMouseLeave={() => setHoveredButton(null)}
@@ -327,9 +340,9 @@ function ActionButtons() {
                 <span className="text-xs xl:text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors block">
                     <SlideText text="Sign In" isHovered={hoveredButton === "signin"} />
                 </span>
-            </Link>
-            <Link
-                href="#"
+            </button>
+            <button
+                onClick={openWaitlist}
                 className="hidden lg:block bg-gray-100 hover:bg-gray-200 px-3 xl:px-4 py-2 rounded-full transition-colors group"
                 onMouseEnter={() => setHoveredButton("demo")}
                 onMouseLeave={() => setHoveredButton(null)}
@@ -337,9 +350,9 @@ function ActionButtons() {
                 <span className="text-xs xl:text-sm font-medium text-gray-900 block">
                     <SlideText text="Book demo" isHovered={hoveredButton === "demo"} />
                 </span>
-            </Link>
-            <Link
-                href="#"
+            </button>
+            <button
+                onClick={openWaitlist}
                 className="rounded-full bg-[#5ccee5] px-3 xl:px-5 py-2 shadow-md transition-all hover:bg-teal-500 hover:scale-105 whitespace-nowrap group"
                 onMouseEnter={() => setHoveredButton("start")}
                 onMouseLeave={() => setHoveredButton(null)}
@@ -347,7 +360,7 @@ function ActionButtons() {
                 <span className="text-xs xl:text-sm font-semibold text-white block">
                     <SlideText text="Get Started" isHovered={hoveredButton === "start"} />
                 </span>
-            </Link>
+            </button>
         </>
     );
 }

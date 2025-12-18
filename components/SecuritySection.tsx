@@ -51,7 +51,7 @@ function ComplianceCard() {
             <div className="p-8 h-full flex flex-col justify-between relative z-10">
                 <div>
                     <div className="flex items-center gap-3 mb-4 flex-wrap">
-                        <div className="px-3 py-1 rounded-full bg-green-100 text-green-700 text-xs font-bold uppercase tracking-wider flex items-center gap-1">
+                        <div className="px-3 py-1 rounded-full bg-cyan-100 text-cyan-700 text-xs font-bold uppercase tracking-wider flex items-center gap-1">
                             <CheckCircle size={12} /> Certified
                         </div>
                         <div className="px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-wider">
@@ -160,7 +160,7 @@ function AuditLogsCard() {
         >
             <div className="flex-1">
                 <div className="flex items-center gap-2 mb-4">
-                    <Activity className="text-emerald-400" size={24} />
+                    <Activity className="text-blue-400" size={24} />
                     <h3 className="text-xl font-bold text-white">Real-time Audit Logs</h3>
                 </div>
                 <p className="text-slate-400 text-sm mb-6 max-w-sm leading-[25px] lg:leading-7">Every action is logged, indexed, and searchable. Monitor access patterns and potential threats in real-time.</p>
@@ -173,12 +173,12 @@ function AuditLogsCard() {
                     <div className="w-2.5 h-2.5 rounded-full bg-green-500"></div>
                 </div>
                 <div className="space-y-2">
-                    <motion.div custom={0} variants={terminalVariants} initial="hidden" whileInView="show" viewport={{ once: true }} className="flex gap-2 text-emerald-500">
+                    <motion.div custom={0} variants={terminalVariants} initial="hidden" whileInView="show" viewport={{ once: true }} className="flex gap-2 text-cyan-500">
                         <span>✓</span>
                         <span className="text-slate-300">User_auth_success</span>
                         <span className="text-slate-500 ml-auto">10:42 AM</span>
                     </motion.div>
-                    <motion.div custom={1} variants={terminalVariants} initial="hidden" whileInView="show" viewport={{ once: true }} className="flex gap-2 text-emerald-500">
+                    <motion.div custom={1} variants={terminalVariants} initial="hidden" whileInView="show" viewport={{ once: true }} className="flex gap-2 text-cyan-500">
                         <span>✓</span>
                         <span className="text-slate-300">Data_export_start</span>
                         <span className="text-slate-500 ml-auto">10:43 AM</span>
@@ -207,13 +207,13 @@ export function SecuritySection() {
     ];
 
     return (
-        <section className="py-5 bg-slate-50 relative overflow-hidden">
+        <section className="pt-10 pb-15 bg-slate-50 relative overflow-hidden">
             {/* Background decoration */}
             <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] bg-size-[20px_20px] opacity-70"></div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="text-left lg:text-center mb-8 lg:mb-20">
-                    {/* Category Label - Mobile only */}
+                    {/* Category Label - Mobile only -M */}
                     <p className="text-sm font-semibold text-slate-500 uppercase tracking-wider mt-5 mb-0.5 md:hidden">
                         Security & Compliance
                     </p>
@@ -236,12 +236,12 @@ export function SecuritySection() {
                     </div> */}
                 </div>
 
-                {/* Mobile Carousel - Hidden on md and up */}
+                {/* Mobile Carousel - Hidden on md and up -M */}
                 <div className="md:hidden -mx-4">
                     <Carousel items={carouselItems} />
                 </div>
 
-                {/* Desktop Grid - Hidden on mobile */}
+                {/* Desktop Grid - Hidden on mobile -W */}
                 <motion.div
                     variants={containerVariants}
                     initial="hidden"

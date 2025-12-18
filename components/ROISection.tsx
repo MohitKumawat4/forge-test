@@ -1,3 +1,5 @@
+"use client";
+
 import { Check } from "lucide-react";
 import Link from "next/link";
 
@@ -28,18 +30,18 @@ export function ROISection() {
                             Exceed every customer expectation
                         </h2>
                         <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
-                            <Link
-                                href="#"
-                                className="rounded-md bg-[#d4f673] px-6 py-3 text-base font-semibold text-[#1a2e28] shadow-sm hover:bg-[#c2e562] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d4f673] transition-colors"
+                            <button
+                                onClick={() => window.dispatchEvent(new CustomEvent("open-waitlist"))}
+                                className="rounded-md bg-white px-6 py-3 text-base font-semibold text-[#5ccee5] shadow-sm hover:bg-zinc-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-all cursor-pointer"
                             >
                                 Try it for free
-                            </Link>
-                            <Link
-                                href="#"
-                                className="rounded-md border border-white/30 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-colors"
+                            </button>
+                            <button
+                                onClick={() => window.dispatchEvent(new CustomEvent("open-waitlist"))}
+                                className="rounded-md border border-white/30 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-all cursor-pointer"
                             >
                                 Get a demo
-                            </Link>
+                            </button>
                         </div>
                     </div>
                 </div>

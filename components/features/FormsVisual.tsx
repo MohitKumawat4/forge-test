@@ -83,14 +83,14 @@ export function FormsVisual() {
                 >
                     {/* Form Header */}
                     <div className="flex items-center gap-3 pb-4 border-b border-zinc-100">
-                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center text-white text-lg">
+                        <div className="w-10 h-10 rounded-xl bg-linear-to-br from-blue-400 to-cyan-600 flex items-center justify-center text-white text-lg">
                             📋
                         </div>
                         <div>
                             <h3 className="text-sm font-bold text-zinc-900">New Request Form</h3>
                             <p className="text-xs text-zinc-500">Step 2 of 3</p>
                         </div>
-                        <div className="ml-auto text-[10px] text-emerald-600 bg-emerald-50 px-2 py-1 rounded-full font-medium">
+                        <div className="ml-auto text-[10px] text-cyan-600 bg-cyan-50 px-2 py-1 rounded-full font-medium">
                             Auto-saving
                         </div>
                     </div>
@@ -140,7 +140,7 @@ export function FormsVisual() {
                                     <span>proposal.pdf</span>
                                     <span className="text-zinc-400">(2.4 MB)</span>
                                 </div>
-                                <span className="text-emerald-500">✓</span>
+                                <span className="text-cyan-500">✓</span>
                             </div>
                         </div>
                     </div>

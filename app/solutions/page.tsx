@@ -220,13 +220,21 @@ const solutions = [
     }
 ];
 
+import { useState, useRef } from "react";
+
 export default function Solutions() {
+    const [animationKey, setAnimationKey] = useState(0);
+    const heroConstraintsRef = useRef(null);
+
+    const restartAnimation = () => {
+        setAnimationKey(prev => prev + 1);
+    };
     return (
         <main className="min-h-screen bg-white">
             <Navbar />
 
             {/* Hero Section */}
-            <section className="relative bg-white overflow-hidden min-h-screen flex items-center pt-20">
+            <section className="relative bg-white overflow-hidden min-h-screen flex items-center pt-20" ref={heroConstraintsRef}>
                 <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] bg-size-[16px_16px] mask-[radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
 
                 <div className="w-full md:w-[90%] max-w-screen-2xl mx-auto px-6 md:px-8 relative z-10">
@@ -244,10 +252,10 @@ export default function Solutions() {
                                 </span>
                                 Enterprise Ready
                             </div>
-                            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-slate-900 tracking-tight mb-6">
+                            <h1 className="text-h1-apple text-slate-900 tracking-tight mb-6">
                                 Intelligent Solutions for <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-violet-600">Every Department</span>.
                             </h1>
-                            <p className="text-lg md:text-xl text-slate-500 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                            <p className="text-p1-apple text-slate-500 mb-8 max-w-2xl mx-auto lg:mx-0 leading-[25px] lg:leading-7">
                                 Empower your teams with AI-driven tools designed to automate workflows, enhance decision-making, and drive growth.
                             </p>
                             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
@@ -262,31 +270,55 @@ export default function Solutions() {
 
                         <div className="relative h-[400px] lg:h-[600px] w-full hidden lg:block">
                             {[
-                                { icon: Users, color: "bg-purple-100 text-purple-600", label: "HR Tech", x: 0, y: 0 },
-                                { icon: Heart, color: "bg-orange-100 text-orange-600", label: "CRM", x: 120, y: -80 },
+                                // Inner Circle (Closer to center)
+                                { icon: Users, color: "bg-purple-100 text-purple-600", label: "HR Tech", x: -170, y: -40 },
+                                { icon: Zap, color: "bg-amber-100 text-amber-600", label: "Automation", x: 170, y: -40 },
                                 { icon: Box, color: "bg-green-100 text-green-600", label: "Inventory", x: -100, y: 100 },
-                                { icon: Calculator, color: "bg-blue-100 text-blue-600", label: "Finance", x: 140, y: 120 },
-                                { icon: Zap, color: "bg-amber-100 text-amber-600", label: "Automation", x: -50, y: -120 },
+                                { icon: BarChart, color: "bg-indigo-100 text-indigo-600", label: "Analytics", x: 100, y: 100 },
+                                { icon: Smartphone, color: "bg-violet-100 text-violet-600", label: "Mobile", x: 0, y: -130 },
+
+                                // Outer Circle (Further out)
+                                { icon: Heart, color: "bg-orange-100 text-orange-600", label: "CRM", x: -240, y: -170 },
+                                { icon: Calculator, color: "bg-blue-100 text-blue-600", label: "Finance", x: 240, y: -170 },
+                                { icon: Bot, color: "bg-pink-100 text-pink-600", label: "AI Agents", x: -200, y: 190 },
+                                { icon: Globe, color: "bg-cyan-100 text-cyan-600", label: "Global", x: 200, y: 190 },
+                                { icon: Shield, color: "bg-rose-100 text-rose-600", label: "Security", x: 0, y: 230 },
                             ].map((item, i) => (
                                 <motion.div
-                                    key={i}
+                                    key={`${i}-${animationKey}`}
                                     initial={{ opacity: 0, scale: 0 }}
                                     animate={{ opacity: 1, scale: 1, x: item.x, y: item.y }}
                                     transition={{ duration: 0.5, delay: 0.2 + i * 0.1 }}
                                     className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
                                 >
                                     <motion.div
-                                        animate={{ y: [0, -10, 0] }}
-                                        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: i * 0.5 }}
-                                        className="p-4 rounded-2xl bg-white shadow-xl border border-slate-100 flex items-center gap-3 w-48"
+                                        drag
+                                        dragConstraints={heroConstraintsRef}
+                                        dragElastic={0.1}
+                                        whileDrag={{ scale: 1.1, zIndex: 100, cursor: 'grabbing' }}
+                                        whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+                                        className="cursor-grab relative group"
                                     >
-                                        <div className={`p-2 rounded-lg ${item.color}`}>
-                                            <item.icon size={20} />
-                                        </div>
-                                        <div>
-                                            <div className="font-bold text-slate-900">{item.label}</div>
-                                            <div className="text-xs text-slate-500">AI Powered</div>
-                                        </div>
+                                        <motion.div
+                                            animate={{
+                                                y: [0, -10, 0],
+                                                rotate: [0, 1, 0, -1, 0]
+                                            }}
+                                            transition={{
+                                                duration: 4 + i,
+                                                repeat: Infinity,
+                                                ease: "easeInOut"
+                                            }}
+                                            className="p-4 rounded-2xl bg-white/95 backdrop-blur-sm shadow-xl border border-slate-100 flex items-center gap-3 w-48 group-hover:border-blue-500/30 group-hover:shadow-blue-500/10 transition-all"
+                                        >
+                                            <div className={`p-2 rounded-lg ${item.color}`}>
+                                                <item.icon size={20} />
+                                            </div>
+                                            <div>
+                                                <div className="font-bold text-slate-900 group-hover:text-blue-600 transition-colors uppercase text-[12px] tracking-wider">{item.label}</div>
+                                                <div className="text-[10px] text-slate-500 font-medium">AI POWERED</div>
+                                            </div>
+                                        </motion.div>
                                     </motion.div>
                                 </motion.div>
                             ))}
@@ -295,8 +327,11 @@ export default function Solutions() {
                             <motion.div
                                 initial={{ opacity: 0, scale: 0 }}
                                 animate={{ opacity: 1, scale: 1 }}
-                                transition={{ duration: 0.8, delay: 0.8 }}
-                                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full bg-slate-900 flex items-center justify-center shadow-2xl z-10"
+                                whileHover={{ scale: 1.1 }}
+                                whileTap={{ scale: 0.9 }}
+                                transition={{ duration: 0.5, delay: 0.8 }}
+                                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full bg-slate-900 flex items-center justify-center shadow-2xl z-10 cursor-pointer hover:bg-slate-800 transition-colors"
+                                onClick={restartAnimation}
                             >
                                 <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
@@ -308,10 +343,10 @@ export default function Solutions() {
             </section>
 
             {/* Core Modules Section */}
-            <section className="py-24 bg-slate-50 border-y border-slate-200">
+            <section className="py-20 bg-slate-50 border-y border-slate-200">
                 <div className="w-full md:w-[90%] max-w-screen-2xl mx-auto px-6 md:px-8">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-5xl font-bold text-slate-900 tracking-tight mb-4">
+                        <h2 className="text-h2-apple text-slate-900 tracking-tight mb-4">
                             Everything Your Business Needs.<br />
                             <span className="text-slate-400">Nothing It Doesn't.</span>
                         </h2>
@@ -380,7 +415,7 @@ export default function Solutions() {
                                     <item.icon size={24} />
                                 </div>
                                 <h3 className="text-lg font-bold text-slate-900 mb-3">{item.title}</h3>
-                                <p className="text-sm text-slate-500 leading-relaxed font-medium">
+                                <p className="text-sm text-slate-500 leading-[25px] lg:leading-7 font-medium">
                                     {item.desc}
                                 </p>
                             </motion.div>
@@ -390,10 +425,10 @@ export default function Solutions() {
             </section>
 
             {/* Solutions Grid */}
-            <section className="px-6 md:px-8 py-32 w-full md:w-[90%] max-w-screen-2xl mx-auto">
+            <section className="px-6 md:px-8 py-20 w-full md:w-[90%] max-w-screen-2xl mx-auto">
                 <div className="mb-12">
-                    <h2 className="text-3xl font-bold text-slate-900">Detailed Capabilities</h2>
-                    <p className="text-slate-500 mt-2">Explore our full suite of specialized engines</p>
+                    <h2 className="text-h2-apple text-slate-900">Detailed Capabilities</h2>
+                    <p className="text-slate-500 mt-2 leading-[25px] lg:leading-7">Explore our full suite of specialized engines</p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {solutions.map((solution, index) => (
@@ -426,7 +461,7 @@ export default function Solutions() {
                             </div>
 
                             {/* Description */}
-                            <p className="text-slate-600 text-sm leading-relaxed mb-8">
+                            <p className="text-slate-600 text-sm leading-[25px] lg:leading-7 mb-8">
                                 {solution.description}
                             </p>
 
@@ -454,8 +489,8 @@ export default function Solutions() {
             {/* CTA Section */}
             <section className="bg-slate-900 py-24 px-6 md:px-8">
                 <div className="w-full md:w-[90%] max-w-screen-2xl mx-auto text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Ready to transform your business?</h2>
-                    <p className="text-slate-400 text-lg mb-10 max-w-2xl mx-auto">
+                    <h2 className="text-h2-apple text-white mb-6">Ready to transform your business?</h2>
+                    <p className="text-p1-apple text-slate-400 mb-10 max-w-2xl mx-auto leading-[25px] lg:leading-7">
                         Join over 500+ forward-thinking companies building on Enterprise Forge today.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

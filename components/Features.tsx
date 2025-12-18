@@ -171,26 +171,26 @@ function Feature3DCard({ activeTab, activeIndex, indexToEmoji }: { activeTab: an
             >
                 {/* Header */}
                 <div className="flex items-center gap-3 border-b border-zinc-100 pb-3 mb-4">
-                    <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center text-white text-sm">
+                    <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-blue-400 to-cyan-600 flex items-center justify-center text-white text-sm">
                         📝
                     </div>
                     <div className="flex-1">
                         <div className="text-[10px] uppercase tracking-wider text-zinc-400 font-semibold">Active Module</div>
                         <div className="font-bold text-zinc-800 text-sm">{activeTab.label}</div>
                     </div>
-                    <div className="text-[9px] text-emerald-600 bg-emerald-50 px-2 py-1 rounded-full font-medium">Step 2 of 3</div>
+                    <div className="text-[9px] text-cyan-600 bg-cyan-50 px-2 py-1 rounded-full font-medium">Step 2 of 3</div>
                 </div>
 
                 {/* Progress Steps */}
                 <div className="flex items-center gap-2 mb-4">
                     <div className="flex items-center gap-1">
-                        <div className="w-5 h-5 rounded-full bg-emerald-500 text-white text-[9px] flex items-center justify-center font-bold">✓</div>
-                        <div className="text-[9px] text-emerald-600 font-medium">Info</div>
+                        <div className="w-5 h-5 rounded-full bg-cyan-500 text-white text-[9px] flex items-center justify-center font-bold">✓</div>
+                        <div className="text-[9px] text-cyan-600 font-medium">Info</div>
                     </div>
-                    <div className="flex-1 h-0.5 bg-emerald-500 rounded" />
+                    <div className="flex-1 h-0.5 bg-cyan-500 rounded" />
                     <div className="flex items-center gap-1">
-                        <div className="w-5 h-5 rounded-full bg-emerald-500 text-white text-[9px] flex items-center justify-center font-bold">2</div>
-                        <div className="text-[9px] text-emerald-600 font-medium">Details</div>
+                        <div className="w-5 h-5 rounded-full bg-cyan-500 text-white text-[9px] flex items-center justify-center font-bold">2</div>
+                        <div className="text-[9px] text-cyan-600 font-medium">Details</div>
                     </div>
                     <div className="flex-1 h-0.5 bg-zinc-200 rounded" />
                     <div className="flex items-center gap-1">
@@ -205,12 +205,12 @@ function Feature3DCard({ activeTab, activeIndex, indexToEmoji }: { activeTab: an
                     <div className="space-y-1">
                         <div className="flex items-center justify-between">
                             <label className="text-[9px] uppercase font-bold text-zinc-500 tracking-wider">Full Name</label>
-                            <span className="text-[8px] text-emerald-500 flex items-center gap-0.5">
-                                <span className="w-2 h-2 rounded-full bg-emerald-500 flex items-center justify-center text-white text-[6px]">✓</span>
+                            <span className="text-[8px] text-cyan-500 flex items-center gap-0.5">
+                                <span className="w-2 h-2 rounded-full bg-cyan-500 flex items-center justify-center text-white text-[6px]">✓</span>
                                 Valid
                             </span>
                         </div>
-                        <div className="h-8 bg-white border border-emerald-300 rounded-md px-2.5 flex items-center text-[11px] text-zinc-700 shadow-sm ring-2 ring-emerald-100">
+                        <div className="h-8 bg-white border border-cyan-300 rounded-md px-2.5 flex items-center text-[11px] text-zinc-700 shadow-sm ring-2 ring-cyan-100">
                             John Smith
                         </div>
                     </div>
@@ -495,22 +495,22 @@ export function Features({ className = "" }: { className?: string }) {
                                                             style={{ overflow: 'visible' }}
                                                         >
                                                             <defs>
-                                                                <linearGradient id="green-gradient-forms-mobile" x1="0%" y1="0%" x2="100%" y2="100%">
-                                                                    <stop offset="0%" stopColor="#064e3b" />
-                                                                    <stop offset="25%" stopColor="#047857" />
-                                                                    <stop offset="50%" stopColor="#10b981" />
-                                                                    <stop offset="75%" stopColor="#34d399" />
-                                                                    <stop offset="100%" stopColor="#6ee7b7" />
+                                                                <linearGradient id="blue-gradient-forms-mobile" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                                    <stop offset="0%" stopColor="#1e3a8a" />
+                                                                    <stop offset="25%" stopColor="#2563eb" />
+                                                                    <stop offset="50%" stopColor="#0891b2" />
+                                                                    <stop offset="75%" stopColor="#22d3ee" />
+                                                                    <stop offset="100%" stopColor="#67e8f9" />
                                                                 </linearGradient>
-                                                                <linearGradient id="green-animated-forms-mobile" x1="0%" y1="0%" x2="100%" y2="0%">
-                                                                    <stop offset="0%" stopColor="#064e3b">
-                                                                        <animate attributeName="stop-color" values="#064e3b;#047857;#10b981;#34d399;#6ee7b7;#34d399;#10b981;#047857;#064e3b" dur="4s" repeatCount="indefinite" />
+                                                                <linearGradient id="blue-animated-forms-mobile" x1="0%" y1="0%" x2="100%" y2="0%">
+                                                                    <stop offset="0%" stopColor="#1e3a8a">
+                                                                        <animate attributeName="stop-color" values="#1e3a8a;#2563eb;#0891b2;#22d3ee;#67e8f9;#22d3ee;#0891b2;#2563eb;#1e3a8a" dur="4s" repeatCount="indefinite" />
                                                                     </stop>
-                                                                    <stop offset="50%" stopColor="#10b981">
-                                                                        <animate attributeName="stop-color" values="#10b981;#34d399;#10b981;#047857;#064e3b;#047857;#10b981" dur="4s" repeatCount="indefinite" />
+                                                                    <stop offset="50%" stopColor="#0891b2">
+                                                                        <animate attributeName="stop-color" values="#0891b2;#22d3ee;#67e8f9;#22d3ee;#0891b2;#2563eb;#1e3a8a;#2563eb;#0891b2" dur="4s" repeatCount="indefinite" />
                                                                     </stop>
-                                                                    <stop offset="100%" stopColor="#6ee7b7">
-                                                                        <animate attributeName="stop-color" values="#6ee7b7;#34d399;#10b981;#047857;#064e3b;#047857;#10b981;#34d399;#6ee7b7" dur="4s" repeatCount="indefinite" />
+                                                                    <stop offset="100%" stopColor="#67e8f9">
+                                                                        <animate attributeName="stop-color" values="#67e8f9;#22d3ee;#0891b2;#2563eb;#1e3a8a;#2563eb;#0891b2;#22d3ee;#67e8f9" dur="4s" repeatCount="indefinite" />
                                                                     </stop>
                                                                 </linearGradient>
                                                             </defs>
@@ -521,7 +521,7 @@ export function Features({ className = "" }: { className?: string }) {
                                                                 width="392"
                                                                 height="492"
                                                                 rx="16"
-                                                                stroke="url(#green-gradient-forms-mobile)"
+                                                                stroke="url(#blue-gradient-forms-mobile)"
                                                                 strokeWidth="1.5"
                                                                 fill="none"
                                                                 strokeOpacity="0.2"
@@ -537,7 +537,7 @@ export function Features({ className = "" }: { className?: string }) {
                                                                 width="392"
                                                                 height="492"
                                                                 rx="16"
-                                                                stroke="url(#green-animated-forms-mobile)"
+                                                                stroke="url(#blue-animated-forms-mobile)"
                                                                 strokeWidth="2.5"
                                                                 fill="none"
                                                                 strokeLinecap="round"
@@ -556,7 +556,7 @@ export function Features({ className = "" }: { className?: string }) {
                                                                 width="392"
                                                                 height="492"
                                                                 rx="16"
-                                                                stroke="url(#green-animated-forms-mobile)"
+                                                                stroke="url(#blue-animated-forms-mobile)"
                                                                 strokeWidth="8"
                                                                 fill="none"
                                                                 strokeLinecap="round"
@@ -592,7 +592,7 @@ export function Features({ className = "" }: { className?: string }) {
                                                         whileInView={{ opacity: 1, scale: 1 }}
                                                         viewport={{ once: true, margin: "-50px" }}
                                                         transition={{ duration: 0.6, ease: "easeOut" }}
-                                                        className="w-[400px] flex items-center justify-center"
+                                                        className="w-[600px] flex items-center justify-center"
                                                     >
                                                         <ReportsVisual />
                                                     </motion.div>
@@ -603,7 +603,7 @@ export function Features({ className = "" }: { className?: string }) {
                                                         whileInView={{ opacity: 1, scale: 1 }}
                                                         viewport={{ once: true, margin: "-50px" }}
                                                         transition={{ duration: 0.6, ease: "easeOut" }}
-                                                        className="w-[400px] flex items-center justify-center"
+                                                        className="w-[700px] flex items-center justify-center"
                                                     >
                                                         <PortalsVisual />
                                                     </motion.div>
@@ -614,7 +614,7 @@ export function Features({ className = "" }: { className?: string }) {
                                                         whileInView={{ opacity: 1, scale: 1 }}
                                                         viewport={{ once: true, margin: "-50px" }}
                                                         transition={{ duration: 0.6, ease: "easeOut" }}
-                                                        className="w-[400px] flex items-center justify-center"
+                                                        className="w-[700px] flex items-center justify-center"
                                                     >
                                                         <BoardsVisual />
                                                     </motion.div>
@@ -699,24 +699,24 @@ export function Features({ className = "" }: { className?: string }) {
                                         >
                                             {/* Green gradient definitions */}
                                             <defs>
-                                                {/* Static green gradient for background trace */}
-                                                <linearGradient id="green-gradient-forms" x1="0%" y1="0%" x2="100%" y2="100%">
-                                                    <stop offset="0%" stopColor="#064e3b" />
-                                                    <stop offset="25%" stopColor="#047857" />
-                                                    <stop offset="50%" stopColor="#10b981" />
-                                                    <stop offset="75%" stopColor="#34d399" />
-                                                    <stop offset="100%" stopColor="#6ee7b7" />
+                                                {/* Static blue gradient for background trace */}
+                                                <linearGradient id="blue-gradient-forms" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                    <stop offset="0%" stopColor="#1e3a8a" />
+                                                    <stop offset="25%" stopColor="#2563eb" />
+                                                    <stop offset="50%" stopColor="#0891b2" />
+                                                    <stop offset="75%" stopColor="#22d3ee" />
+                                                    <stop offset="100%" stopColor="#67e8f9" />
                                                 </linearGradient>
                                                 {/* Animated gradient for smooth traveling effect */}
-                                                <linearGradient id="green-animated-forms" x1="0%" y1="0%" x2="100%" y2="0%">
-                                                    <stop offset="0%" stopColor="#064e3b">
-                                                        <animate attributeName="stop-color" values="#064e3b;#047857;#10b981;#34d399;#6ee7b7;#34d399;#10b981;#047857;#064e3b" dur="4s" repeatCount="indefinite" />
+                                                <linearGradient id="blue-animated-forms" x1="0%" y1="0%" x2="100%" y2="0%">
+                                                    <stop offset="0%" stopColor="#1e3a8a">
+                                                        <animate attributeName="stop-color" values="#1e3a8a;#2563eb;#0891b2;#22d3ee;#67e8f9;#22d3ee;#0891b2;#2563eb;#1e3a8a" dur="4s" repeatCount="indefinite" />
                                                     </stop>
-                                                    <stop offset="50%" stopColor="#10b981">
-                                                        <animate attributeName="stop-color" values="#10b981;#34d399;#6ee7b7;#34d399;#10b981;#047857;#064e3b;#047857;#10b981" dur="4s" repeatCount="indefinite" />
+                                                    <stop offset="50%" stopColor="#0891b2">
+                                                        <animate attributeName="stop-color" values="#0891b2;#22d3ee;#67e8f9;#22d3ee;#0891b2;#2563eb;#1e3a8a;#2563eb;#0891b2" dur="4s" repeatCount="indefinite" />
                                                     </stop>
-                                                    <stop offset="100%" stopColor="#6ee7b7">
-                                                        <animate attributeName="stop-color" values="#6ee7b7;#34d399;#10b981;#047857;#064e3b;#047857;#10b981;#34d399;#6ee7b7" dur="4s" repeatCount="indefinite" />
+                                                    <stop offset="100%" stopColor="#67e8f9">
+                                                        <animate attributeName="stop-color" values="#67e8f9;#22d3ee;#0891b2;#2563eb;#1e3a8a;#2563eb;#0891b2;#22d3ee;#67e8f9" dur="4s" repeatCount="indefinite" />
                                                     </stop>
                                                 </linearGradient>
                                             </defs>
@@ -728,7 +728,7 @@ export function Features({ className = "" }: { className?: string }) {
                                                 width="392"
                                                 height="492"
                                                 rx="16"
-                                                stroke="url(#green-gradient-forms)"
+                                                stroke="url(#blue-gradient-forms)"
                                                 strokeWidth="1.5"
                                                 fill="none"
                                                 strokeOpacity="0.2"
@@ -747,7 +747,7 @@ export function Features({ className = "" }: { className?: string }) {
                                                 width="392"
                                                 height="492"
                                                 rx="16"
-                                                stroke="url(#green-animated-forms)"
+                                                stroke="url(#blue-animated-forms)"
                                                 strokeWidth="2.5"
                                                 fill="none"
                                                 strokeLinecap="round"
@@ -820,7 +820,7 @@ export function Features({ className = "" }: { className?: string }) {
                                     animate={{ opacity: 1 }}
                                     exit={{ opacity: 0 }}
                                     transition={{ duration: 0.5 }}
-                                    className="w-full h-full max-h-[600px] relative flex items-center justify-center"
+                                    className="w-full h-full max-h-[600px] relative flex items-center justify-center translate-x-[60px]"
                                 >
                                     <IntegrationsVisual />
                                 </motion.div>
@@ -833,7 +833,7 @@ export function Features({ className = "" }: { className?: string }) {
                                     animate={{ opacity: 1 }}
                                     exit={{ opacity: 0 }}
                                     transition={{ duration: 0.5 }}
-                                    className="w-full h-full max-h-[600px] relative flex items-center justify-center"
+                                    className="w-full h-full max-h-[600px] relative flex items-center justify-center translate-x-[60px]"
                                 >
                                     <AppsVisual />
                                 </motion.div>
@@ -846,7 +846,7 @@ export function Features({ className = "" }: { className?: string }) {
                                     animate={{ opacity: 1 }}
                                     exit={{ opacity: 0 }}
                                     transition={{ duration: 0.5 }}
-                                    className="w-full h-full max-h-[600px] relative flex items-center justify-center"
+                                    className="w-full h-full max-h-[600px] relative flex items-center justify-center translate-x-[60px]"
                                 >
                                     <ReportsVisual />
                                 </motion.div>
@@ -859,7 +859,7 @@ export function Features({ className = "" }: { className?: string }) {
                                     animate={{ opacity: 1 }}
                                     exit={{ opacity: 0 }}
                                     transition={{ duration: 0.5 }}
-                                    className="w-full h-full max-h-[600px] relative flex items-center justify-center"
+                                    className="w-full h-full max-h-[600px] relative flex items-center justify-center translate-x-[60px]"
                                 >
                                     <WorkflowVisual />
                                 </motion.div>
@@ -872,7 +872,7 @@ export function Features({ className = "" }: { className?: string }) {
                                     animate={{ opacity: 1 }}
                                     exit={{ opacity: 0 }}
                                     transition={{ duration: 0.5 }}
-                                    className="w-full h-full max-h-[600px] relative flex items-center justify-center"
+                                    className="w-full h-full max-h-[600px] relative flex items-center justify-center translate-x-[60px]"
                                 >
                                     <PortalsVisual />
                                 </motion.div>
@@ -885,62 +885,64 @@ export function Features({ className = "" }: { className?: string }) {
                                     animate={{ opacity: 1 }}
                                     exit={{ opacity: 0 }}
                                     transition={{ duration: 0.5 }}
-                                    className="w-full h-full max-h-[600px] relative flex items-center justify-center"
+                                    className="w-full h-full max-h-[600px] relative flex items-center justify-center translate-x-[60px]"
                                 >
                                     <BoardsVisual />
                                 </motion.div>
                             )}
                         </AnimatePresence>
-                    </div>
+                    </div >
 
                     {/* Right: Sticky Sidebar Navigation */}
-                    <div className="hidden lg:flex lg:col-span-3 sticky top-[120px] h-fit flex-col items-end  translate-x-[5px]">
-                        {tabs.map((tab, index) => {
-                            const isActive = index === activeIndex;
+                    < div className="hidden lg:flex lg:col-span-3 sticky top-[120px] h-fit flex-col items-end  translate-x-[5px]" >
+                        {
+                            tabs.map((tab, index) => {
+                                const isActive = index === activeIndex;
 
-                            return (
-                                <motion.div
-                                    key={tab.id}
-                                    className="relative flex items-end w-fit origin-right mb-6"
-                                    animate={{
-                                        scale: isActive ? 1.15 : 1,
-                                        marginRight: isActive ? 0 : 0,
-                                        zIndex: isActive ? 50 : 0,
-                                    }}
-                                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                                >
-                                    <button
-                                        onClick={() => scrollToTab(tab.id)}
-                                        className={`group flex items-start gap-3 transition-all duration-300 text-right
+                                return (
+                                    <motion.div
+                                        key={tab.id}
+                                        className="relative flex items-end w-fit origin-right mb-6"
+                                        animate={{
+                                            scale: isActive ? 1.15 : 1,
+                                            marginRight: isActive ? 0 : 0,
+                                            zIndex: isActive ? 50 : 0,
+                                        }}
+                                        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                                    >
+                                        <button
+                                            onClick={() => scrollToTab(tab.id)}
+                                            className={`group flex items-start gap-3 transition-all duration-300 text-right
                                             ${isActive ? "opacity-100" : "opacity-40 hover:opacity-70"}
                                         `}
-                                    >
-                                        {/* Bullet Point - Zoomed effect */}
-                                        <div className={`rounded-full shrink-0 transition-all duration-300 shadow-sm mt-3
+                                        >
+                                            {/* Bullet Point - Zoomed effect */}
+                                            <div className={`rounded-full shrink-0 transition-all duration-300 shadow-sm mt-3
                                             ${isActive ? "w-3 h-3 bg-black ring-4 ring-black/10" : "w-2 h-2 bg-zinc-400"}
                                         `} />
 
-                                        {/* Label Container with Dotted Line */}
-                                        <div className="flex flex-col items-end">
-                                            <span className={`font-bold transition-all duration-300
+                                            {/* Label Container with Dotted Line */}
+                                            <div className="flex flex-col items-end">
+                                                <span className={`font-bold transition-all duration-300
                                                 ${isActive ? "text-2xl text-black" : "text-xl text-zinc-400"}
                                             `}>
-                                                {tab.label}
-                                            </span>
+                                                    {tab.label}
+                                                </span>
 
-                                            {/* Dotted Line matching label width */}
-                                            <div className={`w-full border-b-2 border-dotted mt-1
+                                                {/* Dotted Line matching label width */}
+                                                <div className={`w-full border-b-2 border-dotted mt-1
                                                 ${isActive ? "border-black border-b-[3px]" : "border-zinc-300"}
                                             `} />
-                                        </div>
-                                    </button>
-                                </motion.div>
-                            );
-                        })}
-                    </div>
+                                            </div>
+                                        </button>
+                                    </motion.div>
+                                );
+                            })
+                        }
+                    </div >
 
-                </div>
-            </div>
-        </section>
+                </div >
+            </div >
+        </section >
     );
 }

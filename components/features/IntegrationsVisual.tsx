@@ -113,7 +113,7 @@ export function IntegrationsVisual() {
                 >
                     <div className="text-[10px] text-zinc-400 uppercase tracking-widest font-medium">From Staging</div>
                     <div className="bg-zinc-50 border border-zinc-200 rounded-lg px-6 py-4 font-mono text-sm text-zinc-600 shadow-sm flex items-center">
-                        <span className="text-purple-600 mr-2">import</span> {'{ prompt }'} <span className="text-purple-600 mx-2">from</span> <span className="text-green-600">&quot;Forge&quot;</span>
+                        <span className="text-purple-600 mr-2">import</span> {'{ prompt }'} <span className="text-purple-600 mx-2">from</span> <span className="text-blue-600">&quot;Forge&quot;</span>
                     </div>
                 </motion.div>
 
